@@ -1,0 +1,12 @@
+# Hugo 构建生成的静态网站文件，这是最重要的
+/public/
+
+# Hugo 构建时产生的临时锁文件
+/.hugo_build.lock
+
+# Hugo 处理资源（如图片、CSS）时生成的缓存目录
+/resources/_gen/
+
+# 其他 Hugo 可能生成的辅助文件
+/assets/jsconfig.json
+/hugo_stats.json
