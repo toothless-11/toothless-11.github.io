@@ -1,5 +1,5 @@
-baseURL: "https://examplesite.com/"
-title: ExampleSite
+baseURL: "https://toothless-11.github.io"
+title: toothless
 paginate: 5
 theme: PaperMod
 
@@ -14,8 +14,8 @@ minify:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: ExampleSite
-  description: "ExampleSite description"
+  title: toothless
+  description: "toothless description"
   keywords: [Blog, Portfolio, PaperMod]
   author: Me
   # author: ["Me", "You"] # multiple authors
@@ -37,7 +37,7 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: false
+  showtoc: true
   tocopen: false
 
   assets:
@@ -57,7 +57,7 @@ params:
   # profile-mode
   profileMode:
     enabled: false # needs to be explicitly set
-    title: ExampleSite
+    title: toothless
     subtitle: "This is subtitle"
     imageUrl: "<img location>"
     imageWidth: 120
@@ -75,12 +75,10 @@ params:
     Content: Welcome to my blog
 
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: CSDN
+      url: "https://blog.csdn.net/cccaul"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/toothless-11"
 
   analytics:
     google:
@@ -96,7 +94,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/<path_to_repo>/content"
+    URL: "https://github.com/toothless-11/toothless-11.github.io/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -113,18 +111,14 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
+    - identifier: archives
+      name: archives
+      url: /archives/
       weight: 10
     - identifier: tags
       name: tags
       url: /tags/
       weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
@@ -135,3 +129,19 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+    markup:
+      goldmark:
+        extensions:
+          passthrough:
+            delimiters:
+              block:
+              - - '\['
+                - '\]'
+              - - $$
+                - $$
+              inline:
+              - - 
+                - $
+            enable: true
+    params:
+      math: true
