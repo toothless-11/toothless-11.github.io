@@ -131,7 +131,8 @@ markup:
     # style: monokai
     markup:
       goldmark:
-        unsafe: true
+        renderer:
+          unsafe: true
         extensions:
           passthrough:
             delimiters:
@@ -146,5 +147,3 @@ markup:
               - - '\('
                 - '\)'
             enable: true
-    params:
-      math: true
