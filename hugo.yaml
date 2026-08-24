@@ -144,6 +144,4 @@ markup:
           inline:
           - - $
             - $
-          - - '\('
-            - '\)'
         enable: true
