@@ -56,10 +56,10 @@ params:
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
+    enabled: true # needs to be explicitly set
     title: toothless
     subtitle: "This is subtitle"
-    imageUrl: "<img location>"
+    imageUrl: ""
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
@@ -140,8 +140,10 @@ markup:
               - - $$
                 - $$
               inline:
-              - - 
+              - - $
                 - $
+              - - '\('
+                - '\)'
             enable: true
     params:
       math: true

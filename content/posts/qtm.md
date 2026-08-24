@@ -18,14 +18,14 @@ Minimal of `unit cells` are called `primitive cells`.
 # Schrodinger Equation
 ## $\Psi(x, t)$ 波函数
 >是given $t$ 下的关于 $x$ 的**连续**函数，使用连续变量几率来刻画electron的分布
->一维空间中 $$P(a \leq x \leq b) = \int_{a}^{b} |\Psi(x)|^2 \, dx$$
->共轭和求导具有独立性 $$\left( \frac{\partial \psi}{\partial t} \right)^* = \frac{\partial \psi^*}{\partial t}$$
+>一维空间中 $$P(a \leq x \leq b) = \int_{a}^{b} |\Psi(x)|^2    dx$$
+>共轭和求导具有独立性 $$   ( \frac{\partial \psi}{\partial t}    )^* = \frac{\partial \psi^*}{\partial t}$$
 
 ## 定理
 1. Schrodinger Equation 的解 $\Psi(x, t)$ 自动满足normalization.
 2. 根据归一化条件和物理直觉，电子出现在无穷远的概率为0.所以 $ x \to \infty, \Psi \to 0$.
 3. 时间和空间独立。若 $\psi(x) = \phi(t)$, 则 $\psi(x) = \phi(t) = Const$.
-4. 若 $V = V(x)$ , `波函数`可以分离变量, $\Psi(x, t) = \psi(x) \, \phi(t)$
+4. 若 $V = V(x)$ , `波函数`可以分离变量, $\Psi(x, t) = \psi(x)    \phi(t)$
 5. 分离变量后得到`定态薛定谔方程` ，很容易看出来定态情况下，`波函数`的模平方只和 $x$ 有关
 $$\hat{H}\psi(x) = E\psi(x)\qquad\hat{H} = -\frac{\hbar^2}{2m} \nabla^2 + V(x)$$
 $$\phi(t) = e^{-iEt/\hbar}\qquad\Psi(x, t) = \psi(x) e^{-iEt/\hbar}$$
@@ -36,14 +36,14 @@ $$\phi(t) = e^{-iEt/\hbar}\qquad\Psi(x, t) = \psi(x) e^{-iEt/\hbar}$$
 ### N个电子
 $$ i\hbar \frac{\partial}{\partial t} \Psi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N, t) = \hat{H} \Psi(\mathbf{r}_1, \mathbf{r}_2, \ldots, \mathbf{r}_N, t) $$
 
-$$ \hat{H} = \sum_{i=1}^{N} \left[ -\frac{\hbar^2}{2m_i} \nabla_i^2 + V(\mathbf{r_i} , t) \right] + \sum_{i < j} V_{ij}(\mathbf{r_i} - \mathbf{r_j}) $$
+$$ \hat{H} = \sum_{i=1}^{N}    [ -\frac{\hbar^2}{2m_i} \nabla_i^2 + V(\mathbf{r_i} , t)    ] + \sum_{i < j} V_{ij}(\mathbf{r_i} - \mathbf{r_j}) $$
 
 >通常用单电子叠加近似来分析多电子的问题，这样就可以忽略势中的**耦合项** $V_{ij}$ ,从而可以把多变量薛定谔方程的波函数分离变量 $$\Psi \approx \psi_1(\mathbf{r}_1) \cdot \psi_2(\mathbf{r}_2) \cdot \dots \cdot \psi_N(\mathbf{r}_N)$$
 最终化为**单个电子，定态**的情况
 ### 单个电子，定态
 $$ \hat{H} \psi(\mathbf{r}) = E \psi(\mathbf{r}) $$
 
-$$ \left[ -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r}) \right] \psi(\mathbf{r}) = E \psi(\mathbf{r}) $$
+$$    [ -\frac{\hbar^2}{2m} \nabla^2 + V(\mathbf{r})    ] \psi(\mathbf{r}) = E \psi(\mathbf{r}) $$
 ### 一般情况、定态的简化写法
 $$ i\hbar \frac{\partial}{\partial t} \Psi = \hat{H} \Psi $$
 
@@ -80,7 +80,7 @@ $$k=\frac{n\pi}{L} \qquad E_n=\frac{\hbar^2 k^2}{2m}=\frac{\hbar^2 n^2\pi^2}{2mL
 $$
 \psi_n(x)=
 \begin{cases}
-\sqrt{\frac{2}{L}}\sin\left(\frac{n\pi x}{L}\right), & 0 < x < L \newline
+\sqrt{\frac{2}{L}}\sin   (\frac{n\pi x}{L}   ), & 0 < x < L \newline
 0, & x \leq 0 \text{ 或 } x \geq L
 \end{cases}
 $$
@@ -152,7 +152,7 @@ By eliminating $A, B,$ and $R$ through algebraic substitution, we solve for the 
 $$T = \frac{e^{-ikL}}{\cosh(\kappa L) + i\frac{\kappa^2 - k^2}{2k\kappa} \sinh(\kappa L)}$$
 
 The **Transmission Probability** $P = |T|^2$ is obtained using $|T|^2 = T \cdot T^*$:
-$$P = \left[ 1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)} \right]^{-1}$$
+$$P =    [ 1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)}    ]^{-1}$$
 
 。
 
