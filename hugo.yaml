@@ -131,6 +131,7 @@ markup:
     # style: monokai
     markup:
       goldmark:
+        unsafe: true
         extensions:
           passthrough:
             delimiters:
