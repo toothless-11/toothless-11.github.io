@@ -1,6 +1,7 @@
 baseURL: "https://toothless-11.github.io"
 title: toothless
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 enableRobotsTXT: true
@@ -129,21 +130,20 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
-    markup:
-      goldmark:
-        renderer:
-          unsafe: true
-        extensions:
-          passthrough:
-            delimiters:
-              block:
-              - - '\['
-                - '\]'
-              - - $$
-                - $$
-              inline:
-              - - $
-                - $
-              - - '\('
-                - '\)'
-            enable: true
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+          - - '\['
+            - '\]'
+          - - $$
+            - $$
+          inline:
+          - - $
+            - $
+          - - '\('
+            - '\)'
+        enable: true
