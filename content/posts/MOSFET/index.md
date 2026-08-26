@@ -12,7 +12,7 @@ title: MOSFET
 
 ## tunneling probabiltiy
 
-Check [有限宽tunneling](../qtmmchnic.md#有限宽tunneling) for quantum mechanics
+Check [有限宽tunneling]({{< ref "qtm.md#有限宽tunneling" >}}) for quantum mechanics
 
 **tunneling probabiltiy**
 
@@ -86,7 +86,7 @@ When a small $ V_{ds}$ is applied, the drain to source current, $ I_{ds} $ is
 $$
 I_{ds} = W \cdot Q_{\text{inv}} \cdot v = W Q_{\text{inv}} \mu_{ns} \mathcal{E} = W Q_{\text{inv}} \mu_{ns} V_{ds} / L
 $$
-[check inversion for the capacitance explanation](../MOScap/moscap.md#strong-inversion-beyond-threshold)
+[check inversion for the capacitance explanation]({{< relref "../MOScap/index.md#inversion" >}})
 $$
 = W C_{\text{oxe}} (V_{gs} - V_t) \mu_{ns} V_{ds} / L
 $$

@@ -310,10 +310,6 @@ mean free path $$ \lambda = v_{th}\tau $$
 
 定义迁移率 (mobility) $$ \mu = \frac{e\tau}{m} $$
 
-则 
-$$ \vec{v}_d = \mu \vec{\mathcal{E}} $$ 
-空穴沿电场方向，电子反向
-
 > 迁移率反映载流子对电场的响应快慢，Si中室温下电子 $\mu_n \approx 1350  \text{cm}^2/(\text{V·s})$，空穴 $\mu_p \approx 480  \text{cm}^2/(\text{V·s})$。
 
 漂移电流密度

@@ -33,10 +33,10 @@ When applied voltage, the vaccum level bends, bcs electron's energy varies in di
 $$\Phi_m = E_{vac} - E_{fm}$$
 
 ### silicon electron affinity
-$$\Chi_s = E_{vac} - E_c$$
+$$\chi_s = E_{vac} - E_c$$
 
 ### silicon work function
-$$\Phi_s = E_{vac} - E_{fs} = \Chi_s + E_c - E_{fs}$$
+$$\Phi_s = E_{vac} - E_{fs} = \chi_s + E_c - E_{fs}$$
 
 ### Schottky barrier
 >For metal n type interface
@@ -223,7 +223,8 @@ $$V_{gap} = V_{fb} + \phi_s + V_{ox} = V_{fb} + \frac{qN_aW_{dep}^2}{2\epsilon_s
 
 
 
-##  THRESHOLD voltage :package multiple variables into one
+##  THRESHOLD voltage 
+>package multiple variables into one
 
 ![alt text](image-7.png)
 >$V_{gap}$ increasingly more positive. **Threshold** is state when there is only depletion but approaching inversion.
@@ -252,7 +253,8 @@ $$\phi_{st} = -2 \phi_B = - 2 \frac{k T}{q} \ln \frac{N_d}{n_i}$$
 
 
 
-## INVERSION : using this package
+## INVERSION
+> using the package established by threshold
 ![alt text](image-8.png)
 > $V_{gap} > V_t$ , there is now a inversion layer, filled with inversion electron.
 The `inversion charge density` is represented with $Q_{inv}$ (C/cm2)

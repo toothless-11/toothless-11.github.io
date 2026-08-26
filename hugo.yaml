@@ -59,7 +59,7 @@ params:
   profileMode:
     enabled: true # needs to be explicitly set
     title: toothless
-    subtitle: "This is subtitle"
+    subtitle: "My notes"
     imageUrl: ""
     imageWidth: 120
     imageHeight: 120
@@ -112,9 +112,9 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: archives
-      name: archives
-      url: /archives/
+    - identifier: posts
+      name: posts
+      url: /posts/
       weight: 10
     - identifier: tags
       name: tags

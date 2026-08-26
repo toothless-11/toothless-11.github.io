@@ -1,0 +1,58 @@
+<!-- layouts/partials/extend_head.html -->
+<style>
+    /* ===== 浅色模式 ===== */
+    .post-content blockquote {
+        background: #f0f4f4 !important;
+        padding: 10px 20px !important;
+        border-radius: 6px !important;
+        border-left-color: #0a9423 !important;
+        border-left-width: 5px !important;
+    }
+    
+    .post-content code {
+        background: #e8f5ee !important;
+        color: #055d3f !important;
+        padding: 3px 8px !important;
+        border-radius: 5px !important;
+    }
+    
+    .post-content a {
+        color: #1a7ab5 !important;
+        text-decoration: none !important;
+        border-bottom: 2px solid transparent !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .post-content a:hover {
+        color: #0a9423 !important;
+        border-bottom-color: #0a9423 !important;
+    }
+    
+    /* ===== 深色模式 ===== */
+    [data-theme="dark"] .post-content blockquote {
+        background: #313d3d !important;
+        padding: 10px 20px !important;
+        border-radius: 6px !important;
+        border-left-color: #0a9423 !important;
+        border-left-width: 5px !important;
+    }
+    
+    [data-theme="dark"] .post-content code {
+        background: #055d3f !important;
+        color: #8cd5eb !important;
+        padding: 3px 8px !important;
+        border-radius: 5px !important;
+    }
+    
+    [data-theme="dark"] .post-content a {
+        color: #8cd5eb !important;
+        text-decoration: none !important;
+        border-bottom: 2px solid transparent !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    [data-theme="dark"] .post-content a:hover {
+        color: #3ac963 !important;
+        border-bottom-color: #057e24 !important;
+    }
+</style>
