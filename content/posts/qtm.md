@@ -1,5 +1,5 @@
 ---
-date: 2024-01-24T18:09:49-08:00
+date: 2026-07-27
 params:
   math: true
 title: Quantum mechanic basics
@@ -154,7 +154,7 @@ $$T = \frac{e^{-ikL}}{\cosh(\kappa L) + i\frac{\kappa^2 - k^2}{2k\kappa} \sinh(\
 The **Transmission Probability** $P = |T|^2$ is obtained using $|T|^2 = T \cdot T^*$:
 $$P =    [ 1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)}    ]^{-1}$$
 
-。
+
 
 ### 单电子原子（类氢原子）
 

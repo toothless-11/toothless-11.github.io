@@ -1,5 +1,5 @@
 ---
-date: 2024-01-24T18:09:49-08:00
+date: 2026-08-12
 params:
   math: true
 title: band theory
@@ -19,12 +19,12 @@ If we count **the number of states in a small range of energy, ∆Ε, in the con
 用三维自由电子气态密度（含自旋），推导
 
 **1. k空间量子态数**  
-体积 \(V\) 中，k 空间态密度为 \(\frac{V}{(2\pi)^3}\)，含自旋简并度 2：
+体积 $V$ 中，k 空间态密度为 $\frac{V}{(2\pi)^3}$，含自旋简并度 2：
 
 $$ dN = 2\cdot \frac{V}{(2\pi)^3}   d^3 \mathbf{k} = \frac{V}{4\pi^3}   4\pi k^2 dk = \frac{V}{\pi^2} k^2 dk $$
 
 **2. 能量替换**  
-由 \(E = \frac{\hbar^2 k^2}{2m}\) 得：
+由 $E = \frac{\hbar^2 k^2}{2m}$ 得：
 
 $$ k^2 dk = \frac{\sqrt{2}   m^{3/2}}{\hbar^3} \sqrt{E}   dE $$
 
@@ -35,7 +35,7 @@ $$ D(E)dE = \frac{V}{\pi^2} \cdot \frac{\sqrt{2}   m^{3/2}}{\hbar^3} \sqrt{E}   
 $$ D(E) = \frac{V}{2\pi^2}   (\frac{2m}{\hbar^2}   )^{3/2}\sqrt{E}$$
 
 **要点**：  
-- 正比于 \(\sqrt{E}\)（三维特征）  
+- 正比于 $\sqrt{E}$（三维特征）  
 $$ \boxed{g(E)=D(E)/V = \frac{1}{2\pi^2}   (\frac{2m}{\hbar^2}   )^{3/2}\sqrt{E}} $$
 
 # DOS of semiconductor
@@ -46,6 +46,7 @@ $$E - E_c = \frac{\hbar^2k^2}{2{m_n}}\qquad E_v - E = \frac{\hbar^2k^2}{2{m_p} }
 >$$g_v(E)= \frac{1}{2\pi^2}   (\frac{2{m_p}}{\hbar^2}   )^{3/2}\sqrt{E_v - E}$$
 
 **为什么自由电子气推导出来的DOS可以到处使用**
+
 笔记暗示了半导体能带结构在能带边缘处，其能量与 $k$ 的关系形式上与自由电子气（$E = \hbar^2k^2/2m$）保持了一致的抛物线形状。这种**数学形式上的相似性**（即 $E \propto k^2$），是笔记能够将自由电子气态密度公式直接移植到半导体中的唯一物理依据。
 同时，所有的误差被转移到**有效质量**上
 
@@ -54,8 +55,9 @@ $$E - E_c = \frac{\hbar^2k^2}{2{m_n}}\qquad E_v - E = \frac{\hbar^2k^2}{2{m_p} }
 > **前提条件**：以下 Fermi–Dirac 分布仅在 **热平衡（Thermal equilibrium）** 下成立。  
 > 非平衡态（光照、外加偏压）下，不能直接用此式。
 
-已知态密度公式，在 $E$ 和电荷守恒约束下，用拉格朗日乘数法算出来的，电子在各能级分布的概率最大的情况（最概然分布）。
-晶体中，电子是无数的，需要考虑多变量波函数。电子分布满足能量守恒和电荷守恒。
+`Fermi-Dirac distribution`是已知态密度公式，在 $E$ 和电荷守恒约束下，用拉格朗日乘数法算出来的，电子在各能级分布的概率最大的情况（最概然分布）
+
+晶体中，电子是无数的，需要考虑多变量波函数。电子分布满足能量守恒和电荷守恒
 
 1. 多电子状况下，电子的分布可以不考虑电子相互作用，利用单电子分布叠加，从而获得最概然分布，即费米分布吗？
 >电子形成的势场，微弱，内部自相抵消，数量级远小于晶格势和原子核势，可以忽略。
@@ -101,16 +103,22 @@ $$f(E) \approx e^{-(E - \mu) / (k_B T)}$$
 
 ## 因果关系
 **Thermal equilibruim** 条件下
-体系的 **intrinsic physics conditions**: $T$ ,dopping, energy band
-决定available electrons and states
+
+体系的 `intrinsic physics conditions`: $T$ ,doping, energy band
+
+决定`available electrons and states`
+
 从而决定唯一的 $E_F$, 
-$E_F$ 作为参数，决定Fermi-Dirac distribution
+$E_F$ 作为参数,决定`Fermi-Dirac distribution`
 
 ## $f(E)$ 的性质 without Boltzman approximation
 >$T = 0K$ ,所有电子的能量都小于 $E_F$
->$T \neq 0K$ ,then $f(E_F) = \frac{1}{2}$
->Mathematically, the **graph** of **$f(E > E_F) $** 与 the **graph** of **$1 - f(E < E_F)$** 关于$E = E_F$对称
->Under **Thermal equilibrium**, Fermi level is a horizental line, 因为上移和下移的电子一样多
+.
+$T \neq 0K$ ,then $f(E_F) = \frac{1}{2}$
+.
+Mathematically, the **graph** of **$f(E > E_F) $** 与 the **graph** of **$1 - f(E < E_F)$** 关于$E = E_F$对称
+.
+Under **Thermal equilibrium**, Fermi level is a horizental line, 因为上移和下移的电子一样多
 
 ---
 
@@ -186,27 +194,27 @@ band 都是electron的band, 所以讲的都是electron的能量。
 
 ---
 # Donor and accepter
-**Dopping** 是在intrinsic里面参杂`donor`和`accepter`，最终引入施主能级 $E_d$ 和受主能级 $E_a$ ,每个施主能级有两个量子态
+**Doping** 是在intrinsic里面参杂`donor`和`accepter`，最终引入施主能级 $E_d$ 和受主能级 $E_a$ ,每个施主能级有两个量子态
 
 ## Ionization
 
 | | **Donor（施主）** | **Accepter（受主）** |
 | :---: | :--- | :--- |
 | **电离定义** | 激发多余电子进**导带** | 价带电子填充受主，产生**空穴** |
-| **result** | \(D^+ +\) electron | \(A^- +\) hole |
-| **complete ionization** | \(n \approx N_d\) | \(p \approx N_a\) |
+| **result** | $D^+ +$ electron | $A^- +$ hole |
+| **complete ionization** | $n \approx N_d$ | $p \approx N_a$ |
 | **未电离的状态** | 多余电子仍占据施主能级 | 受主能级未被电子填充 |
-| **未电离概率公式** | \(f(E_D)=\frac{1}{1+e^{(E_D-E_F)/kT}}\) | \(1-f(E_A)=\frac{1}{1+e^{(E_A-E_F)/kT}}\) |
+| **未电离概率公式** | $f(E_D)=\frac{1}{1+e^{(E_D-E_F)/kT}}$ | $1-f(E_A)=\frac{1}{1+e^{(E_A-E_F)/kT}}$ |
 | **公式的物理含义** | = 被电子占据的概率 | = 未被电子填充的概率 |
 
 ## Two principles
 | | **电中性条件（Charge Neutrality）** | **np 乘积平衡（Mass Action Law）** |
 | :---: | :--- | :--- |
-| **公式** | \(p + N_d^+ = n + N_a^-\) | \(n \cdot p = n_i^2\) |
+| **公式** | $p + N_d^+ = n + N_a^-$ | $n \cdot p = n_i^2$ |
 | **物理含义** | 半导体内部总正电荷 = 总负电荷（无净电荷积累） | 平衡状态下，电子浓度 × 空穴浓度 = 常数（仅与温度有关） |
 | **适用范围** | 热平衡 + 非平衡（只要稳态） | **仅限热平衡状态** |
-| **N型（\(N_d \gg N_a\)）简化** | \(n \approx N_d - N_a\)（若 \(n \gg p\)） | \(p = \dfrac{n_i^2}{n} \approx \dfrac{n_i^2}{N_d - N_a}\) |
-| **P型（\(N_a \gg N_d\)）简化** | \(p \approx N_a - N_d\)（若 \(p \gg n\)） | \(n = \dfrac{n_i^2}{p} \approx \dfrac{n_i^2}{N_a - N_d}\) |
+| **N型（$N_d \gg N_a$）简化** | $n \approx N_d - N_a$（若 $n \gg p$） | $p = \dfrac{n_i^2}{n} \approx \dfrac{n_i^2}{N_d - N_a}$ |
+| **P型（$N_a \gg N_d$）简化** | $p \approx N_a - N_d$（若 $p \gg n$） | $n = \dfrac{n_i^2}{p} \approx \dfrac{n_i^2}{N_a - N_d}$ |
 
 ---
 
@@ -280,25 +288,25 @@ These are the behaviours of electrons and holes.
 
 $$ v_{th} = \sqrt{\frac{3kT}{m}} $$
 
-> 300 K, Si: \(v_{th} \approx 2.3\times10^7  \text{cm/s}\)
+> 300 K, Si: $v_{th} \approx 2.3\times10^7  \text{cm/s}$
 
-两次collision or scattering之间的平均时间为 mean free time \(\tau\)，室温 Si 中约 \(10^{-12}\) 到 \(10^{-13}  \text{s}\)。
+两次collision or scattering之间的平均时间为 mean free time $\tau$，室温 Si 中约 $10^{-12}$ 到 $10^{-13}  \text{s}$。
 
 mean free path $$ \lambda = v_{th}\tau $$
 
 热运动方向随机，net thermal velocity为零, 所以无steady current $$ \langle\vec{v}_{th}\rangle = 0 $$
 
-> 外加电场后，叠加定向漂移速度 \(v_d\)，但 \(v_d \ll v_{th}\)。
+> 外加电场后，叠加定向漂移速度 $v_d$，但 $v_d \ll v_{th}$。
 
 ### Drift
 
-加电场 \(\mathcal{E}\) 后，载流子受到电场力：$$ \vec{F} = q\vec{\mathcal{E}} $$
+加电场 $\mathcal{E}$ 后，载流子受到电场力：$$ \vec{F} = q\vec{\mathcal{E}} $$
 
 在两次散射之间，载流子被电场加速，获得一个定向的漂移速度。
 
-电子 (\(q = -e\))：$$ \vec{v}_{dn} = -\frac{e\tau}{m_n}\vec{\mathcal{E}} $$
+电子 ($q = -e$)：$$ \vec{v}_{dn} = -\frac{e\tau}{m_n}\vec{\mathcal{E}} $$
 
-空穴 (\(q = +e\))：$$ \vec{v}_{dp} = \frac{e\tau}{m_p}\vec{\mathcal{E}} $$
+空穴 ($q = +e$)：$$ \vec{v}_{dp} = \frac{e\tau}{m_p}\vec{\mathcal{E}} $$
 
 定义迁移率 (mobility) $$ \mu = \frac{e\tau}{m} $$
 
@@ -306,7 +314,7 @@ mean free path $$ \lambda = v_{th}\tau $$
 $$ \vec{v}_d = \mu \vec{\mathcal{E}} $$ 
 空穴沿电场方向，电子反向
 
-> 迁移率反映载流子对电场的响应快慢，Si中室温下电子 \(\mu_n \approx 1350  \text{cm}^2/(\text{V·s})\)，空穴 \(\mu_p \approx 480  \text{cm}^2/(\text{V·s})\)。
+> 迁移率反映载流子对电场的响应快慢，Si中室温下电子 $\mu_n \approx 1350  \text{cm}^2/(\text{V·s})$，空穴 $\mu_p \approx 480  \text{cm}^2/(\text{V·s})$。
 
 漂移电流密度
 $$ \vec{J}_{drift} = q n \vec{v}_d + q p \vec{v}_d $$
@@ -360,7 +368,7 @@ $$\frac{1}{\mu} = \frac{1}{\mu_{\text{phonon}}} + \frac{1}{\mu_{\text{impurity}}
 $$ \vec{J}\_{n,diff} = q D_n \nabla n \qquad \vec{J}\_{p,diff} = -q D_p \nabla p $$
 
 > 电子带负电，流向浓度增加方向(∇n指向高浓度)，则电流方向与之相反，所以电子扩散电流沿∇n方向为正，公式为正号；空穴带正电，所以空穴扩散电流沿∇p方向为负，公式为负号。这个符号容易搞混，推导时检查一下。
-其中 \(D_n\) 和 \(D_p\) 是扩散系数 `diffusion coefficient`
+其中 $D_n$ 和 $D_p$ 是扩散系数 `diffusion coefficient`
 
 ![alt text](image-2.png)
 
