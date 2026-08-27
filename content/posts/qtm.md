@@ -50,8 +50,8 @@ $$ i\hbar \frac{\partial}{\partial t} \Psi = \hat{H} \Psi $$
 $$ \hat{H} \psi = E \psi $$
 
 ---
-## 常见理想 $V(x)$ 模型
-### Free electron gas
+# 常见理想 $V(x)$ 模型
+## Free electron gas
 $V = 0$ anywhere, $E > 0$
 定态薛定谔方程：
 $$-\frac{\hbar^2}{2m}\nabla^2 \psi(\mathbf{r}) = E \psi(\mathbf{r})$$
@@ -62,7 +62,7 @@ $$\psi(\mathbf{r}) = A e^{i \mathbf{k} \cdot \mathbf{r}} + B e^{-i \mathbf{k} \c
 代入得：
 $$\frac{\hbar^2 k^2}{2m} = E$$
 
-### 一维无限深方势阱
+## 一维无限深方势阱
 
 $$V(x)=0，0<x<L\qquad V(x)=\infty，x\leq0 或 x\geq L$$
 **阱外** $\psi(x)=0$
@@ -90,11 +90,11 @@ n=1,2,3,\cdots
 $$
 
 
-### 一维阶跃势
+## 一维阶跃势
 
 $$V(x)=0，x<0 \qquad V(x)=V_0，x>0，V_0>0$$
 反射系数 $R$ ,投射系数 $T = 1- R$
-#### $E>V_0$
+- $E>V_0$
 $$k_1=\sqrt{2mE}/\hbar，k_2=\sqrt{2m(E-V_0)}/\hbar$$
 $$\psi(x)=
 \begin{cases}
@@ -103,7 +103,7 @@ T e^{ik_2x}, & x>0
 \end{cases}$$
 $$R=(k_1-k_2)/(k_1+k_2)，T=2k_1/(k_1+k_2)$$
 
-#### $0<E<V_0$
+- $0<E<V_0$
 $$k=\sqrt{2mE}/\hbar，\kappa=\sqrt{2m(V_0-E)}/\hbar$$
 $$\psi(x)=
 \begin{cases}
@@ -112,19 +112,19 @@ T e^{-\kappa x}, & x>0
 \end{cases}$$
 $$R=(k-i\kappa)/(k+i\kappa)，T=2k/(k+i\kappa)$$
 
-### 有限宽tunneling
+## 有限宽tunneling
 
 *   **区域 I ($x < 0$):** $V=0$
 *   **区域 II ($0 < x < L$):** $V=V_0$ （势垒内部）
 *   **区域 III ($x > L$):** $V=0$
 
-####  The Setup
+### The Setup
 Schrödinger equation: $-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi = E\psi$.
 Define wave numbers:
 *   $k = \frac{\sqrt{2mE}}{\hbar}$ (outside, $E > 0$)
 *   $\kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}$ (inside, $V_0 > E$)
 
-####  General Solutions
+###  General Solutions
 $$\psi(x)=
 \begin{cases}
 e^{ikx} + R e^{-ikx}, & x < 0 \newline
@@ -138,7 +138,7 @@ $$
 *   $\kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}$
 *   $R$ 是反射振幅，$T$ 是透射振幅，$A$ 和 $B$ 是势垒内部的波函数系数
 
-#### Boundary Conditions
+### Boundary Conditions
 At $x=0$ and $x=L$, both $\psi$ and $\frac{d\psi}{dx}$ must be continuous:
 1.  **At $x=0$:**
     *   $1 + R = A + B$
@@ -147,7 +147,7 @@ At $x=0$ and $x=L$, both $\psi$ and $\frac{d\psi}{dx}$ must be continuous:
     *   $A e^{\kappa L} + B e^{-\kappa L} = T e^{ikL}$
     *   $\kappa(A e^{\kappa L} - B e^{-\kappa L}) = ik T e^{ikL}$
 
-#### Solving for Transmission ($T$)
+### Solving for Transmission ($T$)
 By eliminating $A, B,$ and $R$ through algebraic substitution, we solve for the transmission amplitude $T$:
 $$T = \frac{e^{-ikL}}{\cosh(\kappa L) + i\frac{\kappa^2 - k^2}{2k\kappa} \sinh(\kappa L)}$$
 
@@ -156,7 +156,7 @@ $$P =    [ 1 + \frac{V_0^2 \sinh^2(\kappa L)}{4E(V_0 - E)}    ]^{-1}$$
 
 
 
-### 单电子原子（类氢原子）
+## 单电子原子（类氢原子）
 
 能量：
 $$E_n=-\frac{\mu Z^2 e^4}{2(4\pi\varepsilon_0)^2\hbar^2}\frac{1}{n^2}=-\frac{Z^2}{n^2}\times13.6\text{ eV}，n=1,2,3,\cdots$$

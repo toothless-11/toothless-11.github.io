@@ -43,15 +43,15 @@ $$\Phi_s = E_{vac} - E_{fs} = \chi_s + E_c - E_{fs}$$
 $$\Phi_{Bn} = E_c(interface) - E_{fm}$$
 
 ## 能带变化
-1. **费米能级对齐**：semi的 $E_{Fs}$ 和metal的 $E_{Fm}$ 对齐，成为一条水平线 $E_F$。因为金属是电子的海洋，从半导体注入金属的电子只是一滴水
-2. **真空能级的连续性**：在接触面（忽略界面dipolar的理想情况下），真空能级 $E_{vac}$ 必须是连续的
+1. **费米能级对齐**：semi的 $E_{Fs}$ 和metal的 $E_{Fm}$ 对齐，成为一条水平线 $E_F$. Metal is the ocean of electrons, the carriers injected into metal is **a drop in the ocean**.
+2. **真空能级的连续性**：在接触面（忽略界面dipolar），真空能级 $E_{vac}$ 必须是连续的
 3. **计算能级差**：
    在紧邻界面的交界处，我们同时观察两边的能级：
    * 从金属侧看，真空能级比费米能级高出 $\Phi_m$
    * 从半导体侧看，真空能级比导带底 $E_c$ 高出 $\chi_s$
 
 由于界面处的真空能级是同一个参考点，我们可以列出能量关系：
-$$\Phi_{Bn} = E_c(界面) - E_F = (E_{vac} - E_F) - (E_{vac} - E_c(界面))$$
+$$\Phi_{Bn} = E_c(界面) - E_F = (E_{vac} - E_F) - (E_{vac} - E_c(interface))$$
 
 将定义代入上式，即可得到：
 $$\Phi_{Bn} = \Phi_m - \chi_s$$
@@ -61,23 +61,21 @@ $$\Phi_{Bp} = E_g - (\Phi_m - \chi_s)$$
 
 
 ## why band bending
->能带弯曲是**内建电场（静电势分布）**在能量空间上的直观反映。
+>能带弯曲是 **built-in field** 在能量空间上的直观反映。
 
 $$E = -qV$$
-- 静电势 $V$ 降低的地方，电子的电势能 $E$ 会**升高（能带向上弯曲）**
-- 静电势 $V$ 升高的地方，电子的电势能 $E$ 会**降低（能带向下弯曲）**
 
-1. n型半导体向上弯曲
+- n型半导体向上弯曲
 >前提：$\Phi_m > \Phi_s$
-***电场方向**：由于半导体一侧带正电，金属一侧带负电，因此在接触面形成了一个**从半导体指向金属**的内建电场。
-***电势变化**：沿着电场的方向s -> m，静电势 $V$ 是逐渐**降低**的
-***能带弯曲**：根据 $E = -qV$，由于界面处的静电势 $V$ 最低，电子在该处的能量 $E$ 就最高。因此，导带底 $E_c$ 和价带顶 $E_v$ 在靠近金属界面时都会**向上弯曲**
+1. **电场方向**：由于半导体一侧带正电，金属一侧带负电，**从半导体指向金属**的内建电场。
+2. **电势变化**：沿着电场的方向s -> m，静电势 $V$ 是逐渐**降低**的
+3. **能带弯曲**：根据 $E = -qV$，由于界面处的静电势 $V$ 最低，电子在该处的能量 $E$ 就最高。因此，导带底 $E_c$ 和价带顶 $E_v$ 在靠近金属界面时都会**向上弯曲**
 
-2. p型半导体向下弯曲
+- p型半导体向下弯曲
 >前提：$\Phi_m < \Phi_s$
-***电场方向**：此时，金属表面带正电，p型半导体一侧由于失去空穴而带负电（固定受主离子）。内建电场**从金属指向半导体**
-***电势变化**：沿着电场方向m -> s，静电势 $V$ 逐渐降低；反过来，从半导体内部靠近金属界面时，静电势 $V$ 是逐渐**升高**的
-***能带弯曲**：根据 $E = -qV$，界面处的静电势 $V$ 最高，电子在该处的能量 $E$ 就最低。因此，靠近金属界面时，能带（导带和价带）会**向下弯曲**
+1. **电场方向**：内建电场**从金属指向半导体**
+2. **电势变化**：沿着电场方向m -> s，静电势 $V$ 逐渐降低；反过来，从半导体内部靠近金属界面时，静电势 $V$ 是逐渐**升高**的
+3. **能带弯曲**：根据 $E = -qV$，界面处的静电势 $V$ 最高，电子在该处的能量 $E$ 就最低。因此，靠近金属界面时，能带（导带和价带）会**向下弯曲**
 
 ## thermionic emission theory
 ![alt text](image-2.png)
@@ -111,7 +109,7 @@ $$dn = 2 ( \frac{m}{h} )^3 \exp ( -\frac{E_c - E_F}{kT}) \exp( -\frac{m(v_x^2 + 
 $$J_{s \to m} = q \int v_x    dn$$
 
 将 $dn$ 代入并展开为三重积分：
-$J_{s \to m} $
+
 
 $$= 2q ( \frac{m}{h} )^3 \exp   ( -\frac{E_c - E_F}{kT}    ) \int_{v_\text{min}}^{\infty} v_x \exp   ( -\frac{m v_x^2}{2kT}    ) dv_x \int_{-\infty}^{\infty} \exp   ( -\frac{m v_y^2}{2kT}    ) dv_y \int_{-\infty}^{\infty} \exp   ( -\frac{m v_z^2}{2kT}    ) dv_z$$
 
@@ -178,14 +176,12 @@ $$\boxed{V_{gap} = V_{fb} + \phi_s + V_{ox}}$$
 
 ## band bending
 zero bias 下，为何metal不倾斜，oxide直线倾斜，semi曲线倾斜？
->因为金属内的电子近似为“自由电子气模型”，像海平面一样，能带flat
-oxide内部没有carrier，由泊松方程可知 $\mathcal{E} = Const$
-semi内部的carrier分布不均，电场会变化
+>因为金属内的电子近似为“自由电子气模型”，像海平面一样 flat. Oxide内部没有carrier，由泊松方程可知 $\mathcal{E} = Const$ . Semi内部的carrier分布不均，电场会变化
 ## flat band
 `flat band` means the band in the oxide layer is flat.
-`flat band voltage` eqs the difference btw gate work function and semicoductor work function 
+`flat band voltage` eqs the difference btw `gate work function` and `semicoductor work function` ,negative more often.
 $$V_{fb} = \psi_g - \psi_s$$
->flat band voltage is negative more often.
+
 ## surface accumulation
 >more negative $V_{gap}$ than $V_{fb}$， causing charge accumulates on the oxide-semi surface.
 
@@ -224,7 +220,7 @@ $$V_{gap} = V_{fb} + \phi_s + V_{ox} = V_{fb} + \frac{qN_aW_{dep}^2}{2\epsilon_s
 
 
 ##  THRESHOLD voltage 
->package multiple variables into one
+
 
 ![alt text](image-7.png)
 >$V_{gap}$ increasingly more positive. **Threshold** is state when there is only depletion but approaching inversion.
@@ -251,10 +247,9 @@ $$V_t = V_{fb} + 2 \phi_B - \sqrt{\frac{2q N_d \epsilon_s 2 \phi_B}{C_{ox}}}$$
 surface potential at the threshold condition:
 $$\phi_{st} = -2 \phi_B = - 2 \frac{k T}{q} \ln \frac{N_d}{n_i}$$
 
-
+>$V_t$ packages multiple variables into one. And *Inversion* uses the package established by *threshold*.
 
 ## INVERSION
-> using the package established by threshold
 ![alt text](image-8.png)
 > $V_{gap} > V_t$ , there is now a inversion layer, filled with inversion electron.
 The `inversion charge density` is represented with $Q_{inv}$ (C/cm2)
@@ -295,10 +290,10 @@ $$\therefore \quad \boxed{Q_{\text{inv}} = -C_{\text{ox}}(V_{\text{gap}} - V_{\t
 ## MOS C–V CHARACTERISTICS
 
 The capacitance in the MOS theory is always the `small-signal capacitance`
-$$C \equiv \frac{dQ_g}{dV_{gap}} = - \frac{dQ_sub}{dV_{gap}}$$
->The negative sign arises from the fact that $V_{gap} and Q_sub$ are taken from different plates.
+$$C \equiv \frac{dQ_g}{dV_{gap}} = - \frac{dQ_{sub}}{dV_{gap}}$$
+>The negative sign arises from the fact that $V_{gap} , Q_{sub}$ are taken from different plates.
 
-### 3 work regions
+### three work regions
 1. in `acc region`, $C = C_{ox}$
 2. in `dep region`, 
 $$C_{\text{dep}} = \frac{\varepsilon_s}{W_{\text{dep}}}$$
@@ -307,6 +302,7 @@ $$\frac{1}{C} = \sqrt{\frac{1}{C_{\text{ox}}^2} + \frac{2(V_{gap} - V_{\text{fb}
 3. in `inv region`, 
 - **if the device is MOS transistor** `inversion layer` can get suffient **electron supply** becomes the bottom electrode,  $C = C_{ox}$
 - if **insuffient electron supply** , things becomes similar to `dep region`. However, due to $W_{dep}$ has a maximum $W_{dmax}$, the capcitance saturates when $V_{gap}$ reaches $V_t$.
+
 **MOS transistor/cap C–V**
 ![alt text](image-9.png)
 

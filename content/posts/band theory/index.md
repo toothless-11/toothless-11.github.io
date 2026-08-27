@@ -52,6 +52,10 @@ $$E - E_c = \frac{\hbar^2k^2}{2{m_n}}\qquad E_v - E = \frac{\hbar^2k^2}{2{m_p} }
 
 
 # Fermi-Dirac distribution
+
+费米-狄拉克分布函数 $f(E)$ 表示能量为 $E$ 的单个量子态被粒子占据的概率：
+
+$$f(E) = \frac{1}{e^{(E - \mu) / (k_B T)} + 1}$$
 > **前提条件**：以下 Fermi–Dirac 分布仅在 **热平衡（Thermal equilibrium）** 下成立。  
 > 非平衡态（光照、外加偏压）下，不能直接用此式。
 
@@ -66,11 +70,8 @@ $$E - E_c = \frac{\hbar^2k^2}{2{m_n}}\qquad E_v - E = \frac{\hbar^2k^2}{2{m_p} }
 3. 考虑为叠加，是否违背多变量波函数？
 >前面有提到过，用叠加法实际上是去掉耦合项，把多变量波函数分离变量。
 
-## 1. 原始式子
-费米-狄拉克分布函数 $f(E)$ 表示能量为 $E$ 的单个量子态被粒子占据的概率：
 
-$$f(E) = \frac{1}{e^{(E - \mu) / (k_B T)} + 1}$$
----
+
 **参数说明：**
 *   $E$：该量子态的能量。
 *   $\mu$：化学势（在半导体物理中常记为费米能级 $E_F$）。
@@ -92,7 +93,7 @@ $$f(E) = \frac{1}{e^{(E - \mu) / (k_B T)} + 1}$$
 **上下都少，不能像金属那样忽略**
 
 
-## 2. 玻尔兹曼近似（Boltzmann Approximation）
+## 玻尔兹曼近似（Boltzmann Approximation）
 
 当系统满足特定条件（即能量远大于化学势，$(E - \mu) \gg k_B T$）时，分母中的“+1”可以忽略不计。此时，费米分布退化为麦克斯韦-玻尔兹曼分布的形式：
 
@@ -194,21 +195,21 @@ band 都是electron的band, 所以讲的都是electron的能量。
 
 ---
 # Donor and accepter
-**Doping** 是在intrinsic里面参杂`donor`和`accepter`，最终引入施主能级 $E_d$ 和受主能级 $E_a$ ,每个施主能级有两个量子态
+**Doping** 是在intrinsic里面参杂`donor`和`accepter`，最终引入施主能级 $E_d$ 和受主能级 $E_a$ ,每个施主能级有两个量子态。$E_d$ 从下靠近 $E_c$ ，$E_a$ 从上靠近 $E_v$, 这使得拥挤的 `donor level`上的电子容易受激发，进入 $E_c$; 价带电子容易受激发进入比较空旷的`accepter level`
 
 ## Ionization
 
 | | **Donor（施主）** | **Accepter（受主）** |
 | :---: | :--- | :--- |
-| **电离定义** | 激发多余电子进**导带** | 价带电子填充受主，产生**空穴** |
+| **电离定义** | 激发 $E_d$ 电子进**导带** | 价带电子填充 $E_a$ ，产生**空穴** |
 | **result** | $D^+ +$ electron | $A^- +$ hole |
 | **complete ionization** | $n \approx N_d$ | $p \approx N_a$ |
 | **未电离的状态** | 多余电子仍占据施主能级 | 受主能级未被电子填充 |
 | **未电离概率公式** | $f(E_D)=\frac{1}{1+e^{(E_D-E_F)/kT}}$ | $1-f(E_A)=\frac{1}{1+e^{(E_A-E_F)/kT}}$ |
-| **公式的物理含义** | = 被电子占据的概率 | = 未被电子填充的概率 |
+
 
 ## Two principles
-| | **电中性条件（Charge Neutrality）** | **np 乘积平衡（Mass Action Law）** |
+| | **电中性条件（Charge Neutrality）** | **np 乘积平衡** |
 | :---: | :--- | :--- |
 | **公式** | $p + N_d^+ = n + N_a^-$ | $n \cdot p = n_i^2$ |
 | **物理含义** | 半导体内部总正电荷 = 总负电荷（无净电荷积累） | 平衡状态下，电子浓度 × 空穴浓度 = 常数（仅与温度有关） |
@@ -241,7 +242,6 @@ $$N_c \exp   (-\frac{E_c - E_{fi}}{k_B T}   ) = N_v \exp   (-\frac{E_{fi} - E_v}
 整理得到本征费米能级 $E_{fi}$ 的表达式：
 $$E_{fi} = \frac{E_c + E_v}{2} + \frac{1}{2} k_B T \ln   (\frac{N_v}{N_c}   )$$
 
-引入有效质量的表达形式
 导带和价带的有效状态密度 $N_c$ 和 $N_v$ 与电子和空穴的有效质量 $m_e$、$m_h$ 存在如下关系：
 $$N_c = 2    ( \frac{2\pi m_e k_B T}{h^2}    )^{3/2} \qquad N_v = 2    ( \frac{2\pi m_h k_B T}{h^2}    )^{3/2}$$
 
@@ -268,7 +268,7 @@ $$N_c \exp   (-\frac{E_c - E_f}{k_B T}   ) = n = N_d$$
 | **n型半导体** | $E_{fn} = E_{fi} + k_B T \ln   (\frac{N_d}{n_i}   )$ | 偏向导带（禁带上半部分） |
 | **p型半导体** | $E_{fp} = E_{fi} - k_B T \ln   (\frac{N_a}{n_i}   )$ | 偏向价带（禁带下半部分） |
 
-*注：上述公式适用于非简并半导体（即掺杂浓度没有达到极高水平，费米能级仍距离导带底或价带顶大于 $3k_B T$ 的情况）*
+*注：上述公式适用于非简并半导体（即掺杂浓度没有达到极高水平，费米能级仍距离导带底或价带顶大于 $3k_B T$ 的情况，可以适用Boltzman 近似）*
 
 ---
 
@@ -284,7 +284,7 @@ These are the behaviours of electrons and holes.
 
 即使在无外加电场时，载流子也在做随机热运动。
 
-平均热动能：$$ \langle E_k \rangle = \frac{3}{2}kT, \quad \frac{1}{2}mv_{th}^2 = \frac{3}{2}kT $$
+平均热动能 $$ \langle E_k \rangle = \frac{3}{2}kT, \quad \frac{1}{2}mv_{th}^2 = \frac{3}{2}kT $$
 
 $$ v_{th} = \sqrt{\frac{3kT}{m}} $$
 
@@ -300,13 +300,13 @@ mean free path $$ \lambda = v_{th}\tau $$
 
 ### Drift
 
-加电场 $\mathcal{E}$ 后，载流子受到电场力：$$ \vec{F} = q\vec{\mathcal{E}} $$
+加电场 $\mathcal{E}$ 后，载流子受到电场力 $$ \vec{F} = q\vec{\mathcal{E}} $$
 
 在两次散射之间，载流子被电场加速，获得一个定向的漂移速度。
 
-电子 ($q = -e$)：$$ \vec{v}_{dn} = -\frac{e\tau}{m_n}\vec{\mathcal{E}} $$
+电子 ($q = -e$) $$ \vec{v}_{dn} = -\frac{e\tau}{m_n}\vec{\mathcal{E}} $$
 
-空穴 ($q = +e$)：$$ \vec{v}_{dp} = \frac{e\tau}{m_p}\vec{\mathcal{E}} $$
+空穴 ($q = +e$) $$ \vec{v}_{dp} = \frac{e\tau}{m_p}\vec{\mathcal{E}} $$
 
 定义迁移率 (mobility) $$ \mu = \frac{e\tau}{m} $$
 
