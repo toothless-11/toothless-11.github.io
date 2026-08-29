@@ -171,14 +171,31 @@ $$J = J_s    [ \exp   ( \frac{qV}{kT}    ) - 1    ]$$
 | --- | --- |
 |![alt text](image-3.png)|![alt text](image-4.png)|
 
-$V_{gap}$ refers to the fermi level gap btw metal and semiconductor.
+1. $V_{gap}$ refers to the fermi level gap btw metal and semiconductor
+2. $\phi_s$ refers to the band bending of substrate, negative if $E_c$ bends up toward surface
+3. $V_{ox}$ is the voltage across oxide, negative if band tilts up toward the gate
 $$\boxed{V_{gap} = V_{fb} + \phi_s + V_{ox}}$$
 
-## band bending
-zero bias 下，为何metal不倾斜，oxide直线倾斜，semi曲线倾斜？
+
+## zero bias
+- zero bias 下，为何能带如此弯曲？
+因为 $\Phi_m \neq \Phi_s$，金属侧的 $E_F$ 和半导体侧的 $E_F$ 在接触前处于不同的高度。为了强行把它们“拉平”，电荷会在接触面附近重新分布：金属侧和半导体侧会通过外部电路进行电子交换, 交换在界面处产生一个`Built-in Field`。内建电场产生的电势变化，必然会导致能带随着电势的变化而弯曲。
+
+
+
+- zero bias 下，为何metal不倾斜，oxide直线倾斜，semi曲线倾斜？
 >因为金属内的电子近似为“自由电子气模型”，像海平面一样 flat. Oxide内部没有carrier，由泊松方程可知 $\mathcal{E} = Const$ . Semi内部的carrier分布不均，电场会变化
+
+- 为什么MOScap施加电压后，不需要像PN结一样考虑准费米能级，只需要费米能级？
+
+PN结在正向或反向偏置下都有电流，系统与外界存在能量交换。而MOScap中只有静电感应，没有持续电流，费米能级统一。
+
+- 有电压约束，必然有电气连接
+- when applied voltage，metal 和 semi 的 fermi level错开
+
 ## flat band
 `flat band` means the band in the oxide layer is flat.
+
 `flat band voltage` eqs the difference btw `gate work function` and `semicoductor work function` ,negative more often.
 $$V_{fb} = \psi_g - \psi_s$$
 
@@ -186,18 +203,20 @@ $$V_{fb} = \psi_g - \psi_s$$
 >more negative $V_{gap}$ than $V_{fb}$， causing charge accumulates on the oxide-semi surface.
 
 ![alt text](image-5.png)
-$\phi_s$ is the **surface voltage**,is zero at Vfb and approximately zero in the accumulation region
+$\phi_s$ is also the **surface voltage**.
 **Hole concentration** on surface is larger than that in the bulk
 $$p_s = N_a e^{{-q\phi_s}/{kT}}$$
 
 $$V_{gap} = V_{fb} + \phi_s + V_{ox}$$
-$\phi_s$ may be ignored in a first-order model since it is quite small **under surface accumulation**
+
 
 ### $V_{ox}$
 >此处的分压按照绝缘体电容器计算
 
 $$V_{ox} = V_{gap} - V_{fb}\qquad V_{ox} = -Q_{acc} / C_{ox}$$
 $$V_{ox} = -Q_{sub} / C_{ox}$$
+
+$\phi_s$ may be ignored in a first-order model since it is quite small **under surface accumulation**
 
 $C_{ox}$ is the oxide capacitance per unit area (F/cm2) and $Q_{sub}$ is the substrate charge density (C/cm2)
 
@@ -209,6 +228,7 @@ $C_{ox}$ is the oxide capacitance per unit area (F/cm2) and $Q_{sub}$ is the sub
 >a more positive $V_{gap}$ than $V_{fb}$ is applied.
 there is now a depletion region at the surface because $E_F$ is far from both Ec and Ev
 
+用上`泊松方程`和`边界条件` $ \mathcal{E_(x = W_{dep})} = 0 $
 $$V_{ox} = -\frac{Q_{sub}}{C_{ox}} = -\frac{Q_{dep}}{C_{ox}} = \frac{qN_aW_{dep}}{C_{ox}} = \frac{\sqrt{qN_a^2\epsilon_s}\phi_s}{C_{ox}}$$
 
 $$\phi_s = \frac{qN_aW_{dep}^2}{2\epsilon_s}$$
@@ -237,30 +257,37 @@ $$= k T \ln \frac{N_v}{n_i} - k T \ln \frac{N_v}{N_a} = k T \ln \frac{N_a}{n_i}$
 surface potential at the threshold condition:
 $$\phi_{st} = 2 \phi_B = 2 \frac{k T}{q} \ln \frac{N_a}{n_i}$$
 threshold voltage:
-$$\boxed{V_t = V_{fb} + 2 \phi_B + \sqrt{\frac{2q N_a \epsilon_s 2 \phi_B}{C_{ox}}}}$$
+$$\boxed{V_t = V_{fb} + 2 \phi_B + \frac{\sqrt{2q N_a \epsilon_s 2 \phi_B}}{C_{ox}}}$$
 
 --- 
 ### n type bulk
 
 threshold voltage:
-$$V_t = V_{fb} + 2 \phi_B - \sqrt{\frac{2q N_d \epsilon_s 2 \phi_B}{C_{ox}}}$$
+$$V_t = V_{fb} + 2 \phi_B - \frac{\sqrt{2q N_d \epsilon_s 2 \phi_B}}{C_{ox}}$$
 surface potential at the threshold condition:
 $$\phi_{st} = -2 \phi_B = - 2 \frac{k T}{q} \ln \frac{N_d}{n_i}$$
 
 >$V_t$ packages multiple variables into one. And *Inversion* uses the package established by *threshold*.
 
-## INVERSION
+# INVERSION
 ![alt text](image-8.png)
 > $V_{gap} > V_t$ , there is now a inversion layer, filled with inversion electron.
 The `inversion charge density` is represented with $Q_{inv}$ (C/cm2)
-### $\phi_s$ pinning
-#### Before Inversion 
-- $\phi_s < 2\phi_B$
+## $\phi_s$ pinning
+### Before Inversion $\phi_s < 2\phi_B$
 The only charge in the semiconductor is the depletion charge $Q_{\text{dep}}$ , which only grows slowly (proportionally to $\sqrt{\phi_s}$). Because $Q_{\text{dep}}$ is relatively small, $V_{\text{ox}}$ increases slowly. Therefore, most of the increase in gate voltage ($V_{gap}$) goes directly into bending the bands further, i.e., increasing $\phi_s$.
 
-#### After Inversion 
-- $\phi_s \ge 2\phi_B$
-Once $\phi_s$ reaches $2\phi_B$, the `inversion layer` forms. Now, if $V_{gap}$ increase  further:
+### After Inversion $\phi_s \ge 2\phi_B$
+Once $\phi_s$ reaches $2\phi_B$, the `inversion layer` forms. Now, if $V_{gap}$ increase  further
+
+Inversion charge density $Q_{inv} = \frac{n_i^2}{N_a} e^{\phi_s / {kT}} W_{inv}$
+- $W_{inv}$ is `equivalent inversion width` (**sorry, invented by toothless**), $W_{dep} \gg W_{inv}$
+
+
+$$V_{ox} = -\frac{Q_{inv} + Q_{dep}}{C_{ox}} \qquad \phi_s = \frac{Q_{dep}^2}{2\epsilon_s qN_a}$$
+$$V_{gap} = V_{fb} + -\frac{\frac{n_i^2}{N_a} e^{\phi_s / {kT}} W_{inv} + \sqrt{2q N_a \epsilon_s \phi_s}}{C_{ox}} + \phi_s$$
+
+
 1. If $\phi_s$ were to increase even slightly (e.g., by $0.1\text{ V}$), the exponential rule dictates that $Q_{\text{inv}}$ would increase massively.
 2. This massive surge in $Q_{\text{inv}}$ requires a correspondingly massive increase in the oxide voltage drop ($V_{\text{ox}} = Q_{\text{inv}}/C_{\text{ox}}$).
 3. Since $V_{gap} = V_{\text{fb}} + V_{\text{ox}} + \phi_s$, **almost all of the newly applied gate voltage is "soaked up" by the oxide ($V_{\text{ox}}$)** to support this massive sheet of inversion charge.
