@@ -110,6 +110,7 @@ Now let's figure out the two:
 >$Q_{dep}$ and $Q_{inv}$ are charge density per unit area (C/cm2)
 
 - $\mathcal{E}_t$
+
 Apply **Gauss’s Law** to a box that encloses the depletion layer and the inversion layer.
 **Using boundary condition** : $\mathcal{E} = 0$ on the border of `dep layer` and `p bulk`bcs of **electric field continuity**.
 
@@ -126,6 +127,7 @@ $$
 $$
 
 - $\mathcal{E_b}$
+
 Apply Gauss’s Law to a box that encloses the depletion layer and the inversion layer.
 **Using boundary condition** : $\mathcal{E} = 0$ on the border of `dep layer` and `p bulk`bcs of **electric field continuity**.
 $$
@@ -149,6 +151,96 @@ $$
 = \frac{V_{gs} + V_t + 0.2    V}{6T_{oxe}}
 $$
 
-# new chapter
-## 
+# mosfet $V_t$
+When talking about [inversion work region]({{< relref "../MOScap/index.md#inversion" >}}), we always assume that the surface can easily get **suffient electron supply**. However, there is prerequisites, and the threshold condition (namely when the inversion work region is started) is greatly influenced by $V_{sb}$.
 
+## predetail
+**range of $V_sb$** 
+>Usually, $V_{sb} < 0$, that's to say that the junction of $N^+$ source and P bulk is **never forward biased**.
+
+**threshold condition**
+>We assume that when the $E_c$ of surface fell to approach the $E_c$ of the source making conduction band gap ignorable, the surface can get suffient supply. Simply the condition can be written as
+$$(E_c - E_{fp})_{surface} = (E_c - E_{fn})_{source} - qV_{sb}$$
+
+**assumption to ease calculation**
+>$$(E_f - E_v)_{bulk} = (E_c - E_{fn})_{source}$$
+
+## derivation of $V_t$
+threshold condition can be written as
+$$(E_c - E_{fp})_{surface} = (E_f - E_v)_{bulk} - V_{sb}$$
+the surface potential
+$$(E_c - E_{fp})_{surface} = (E_c - E_f)_{bulk} - q\phi_st$$
+$$\phi_st = V_{sb} + 2\phi_B \qquad \phi_B = \frac{kT}{q} \ln{\frac{N_a}{n_i}}$$
+$$\phi_st = \frac{Q_{dep}^2}{2\epsilon_s qN_a}$$
+
+### threshold voltage of $V_{gs}$
+>From now on, $V_t$ refers to the threshold of **gate-source voltage**
+
+$$V_t(V_{sb}) = V_{fb} + 2\phi_B + \frac{\sqrt{2q N_a \epsilon_s \phi_st}}{C_{ox}} $$
+$$= V_{t0} + \frac{\sqrt{2q N_a \epsilon_s}}{C_{ox}} (\sqrt{V_{sb} + 2\phi_B} - \sqrt{2\phi_B})$$
+
+# mosfet $Q_{inv}$
+![alt text](image-5.png)
+- 因为inversion layer载流子浓度高，可近似看成导体。中间平行板的电荷需要计算**上下个表面**电荷密度之和
+- 同时，这里假设 $W_dmax$ and `body effect coeffient` 不随 $V_{sb}$ 变化
+$$
+Q_{inv} = -C_{oxe}(V_{gs} - V_t) + C_{dep}V_{sb}
+$$
+## body effect
+$$= -C_{oxe}(V_{gs} - (V_t + \frac{C_{dep}}{C_{oxe}}V_{sb}))$$
+$$Q_{inv} = -C_{oxe}(V_{gs} - V_t(V_{sb}))$$
+$$V_t(V_{sb}) = V_{t0} + \frac{C_{dep}}{C_{oxe}}V_{sb} = V_{t0} + \alpha V_{sb}$$
+
+$$\alpha = \frac{C_{dep}}{C_{oxe}} = 3T_{oxe}/W_{dmax}$$
+The fact that $V_t$ is a function of the body bias is called the `body effect`. The body effect should be **minimized**. This can be accomplished by minimizing the Tox/Wdmax ratio. (so a `thin oxide` is desirable.) 
+
+$\alpha$ is called the `body-effect coefficient`.
+
+## bulk-charge effect
+- channel voltage
+
+$V_{\text{cs}}(0) = 0 \qquad V_{\text{cs}}(L) = V_{ds} \qquad L$ is the `channal length`
+
+![alt text](image-7.png)
+$$Q_{\text{inv}}(x) = -C_{\text{oxe}}(V_{\text{gs}} - V_{\text{cs}} - V_{\text{t0}} - \alpha(V_{\text{sb}} + V_{\text{cs}}))$$
+
+$$= -C_{\text{oxe}}(V_{\text{gs}} - V_{\text{cs}} - (V_{\text{t0}} + \alpha V_{\text{sb}}) - \alpha V_{\text{cs}})$$
+
+$$= -C_{\text{oxe}}(V_{\text{gs}} - m V_{\text{cs}} - V_{\text{t}})$$
+the `bulk-charge factor`
+$$m \equiv 1 + \alpha = 1 + C_{\text{dep}} / C_{\text{oxe}} = 1 + 3T_{\text{oxe}} / W_{\text{dmax}}$$
+
+## doping type
+![alt text](image-6.png)
+### Retrograde body doping 
+light doping in a thin surface layer and very heavy doping underneath, $W_dmax$ and `body effect coeffient` are constants. As a result, modern transistors exhibit a more or less linear relationship between $V_t$ and $V_{sb}$. 
+
+$V_t$ obeys [the result of $Q_{inv}$](#mosfet-2)
+### Uniform body doping
+
+$W_{dmax}$ and $C_{dep}$ varies with $V_{sb}$, $V_t$ obeys [the result of $Q_{inv}$](#threshold-voltage-of)
+
+# basic mosfet IV model
+
+$$I_{ds} = W \cdot Q_{inv}(x) \cdot \nu = W \cdot Q_{inv} \mu_{ns} \mathcal{E}$$
+
+$$= WC_{oxe}(V_{gs} - mV_{cs} - V_t) \mu_{ns} dV_{cs} / dx$$
+
+$$\int_{0}^{L} I_{ds} dx = W C_{\text{oxe}} \mu_{ns} \int_{0}^{V_{ds}} (V_{gs} - m V_{cs} - V_t) dV_{cs}$$
+
+$$I_{ds} L = W C_{\text{oxe}} \mu_{ns} \left( V_{gs} - V_t - \frac{m}{2} V_{ds} \right) V_{ds}$$
+
+$$I_{ds} = \frac{W}{L} C_{\text{oxe}} \mu_{ns} \left( V_{gs} - V_t - \frac{m}{2} V_{ds} \right) V_{ds}$$
+
+## drain saturation voltage
+$$\frac{dI_{ds}}{dV_{ds}} = 0 = \frac{W}{L} C_{ox}\mu_{ns}(V_{gs} - V_t - mV_{ds}) \quad \text{at} \quad V_{ds} = V_{dsat}$$
+
+$$V_{dsat} = \frac{V_{gs} - V_t}{m}$$
+### saturation current
+$$I_{\text{dsat}} = \frac{W}{2 \, \text{mL}} C_{\text{oxe}} \mu_{\text{ns}} (V_{\text{gs}} - V_{\text{t}})^2 $$
+1. What happens at $V_{ds} = V_{dsat}$ and why does $I_{ds}$ stay constant beyond $V_{dsat}$?
+>$Q_{inv}$ at the drain end of the channel, when $V_{ds} = V_{dsat}$, is zero! This disappearance of the inversion layer is called channel `pinch-off`.
+>At $V_{ds} > V_{dsat}$, there exists a short, **high-field pinch-off region** where $Q_{inv} = 0$ and across which the voltage $V_{ds} - V_{dsat}$ is dropped. 
+
+2. How can a current flow through the `pinch-off region`, which is similar to a `depletion region`? 
+>The fact is that a depletion region does not stop current flow as long as there is a supply of the right carriers.
