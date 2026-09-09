@@ -108,7 +108,7 @@ The term depletion layer means that the layer is depleted of electrons and holes
 Bcs holes **diffuse** from p-side to n-side, and similarly electrons
 - Results
 
->1. Mobile carriers are **depleted** in the depletion layer.
+>1. `Mobile carriers in dep` are way poor compared to `majority carriers in neutral`. **depleted** in the depletion layer.
 >2. The ionized dopants ${N_a}^-$ near p-side, ${N}_d^+$ near n-side are no longer compensated by mobile carriers.
 >3. This results in a **net space charge** in the depletion region, which creates a `built-in electric field` opposite to the `diffusion current`.
 
@@ -119,20 +119,19 @@ Bcs holes **diffuse** from p-side to n-side, and similarly electrons
 ![alt text](image-6.png)
 
 - 基于载流子电流平衡推导
-$$J_n = q n \mu_n \mathcal{E} + q D_n \nabla n$$
+$$J_p = q p \mu_p \mathcal{E} + q D_p \nabla p$$
+在热平衡状态下，$J_p = \mu_p p \nabla E_{Fp} = 0$
 
+这里以空穴为例子，分别用空穴和电子`net current`为0推导的结果是相同的
 
-在热平衡状态下，$J_n = \mu_n n \nabla E_{Fn} = 0$
-
-$$\mathcal{E}(x) = -\frac{d\phi(x)}{dx}$$
 
 - 引入电势与爱因斯坦关系式
 
 根据`Einstein relationship`，迁移率和扩散系数满足
 $$\frac{D_p}{\mu_p} = \frac{k_B T}{q} = V_t$$
 （其中 $V_t$ 为热电压，常温下约等于 $26\text{ mV}$，$k_B$ 为玻尔兹曼常数，$T$ 为绝对温度）。
-
-将上述两个关系代入平衡方程：
+$$\mathcal{E}(x) = -\frac{d\phi(x)}{dx}$$
+将上述两个关系代入平衡方程
 $$q \mu_p p    (-\frac{d\phi}{dx}   ) - q D_p \frac{dp}{dx} = 0$$
 
 $$-\frac{d\phi}{dx} = \frac{D_p}{\mu_p} \frac{1}{p} \frac{dp}{dx}$$
@@ -279,10 +278,9 @@ $$C_{dep} = \frac{\epsilon_s A}{W_{dep}}$$
 
 
 ## Junction breakdown
->1. **有电流即击穿**
-   A reverse-biased PN junction conducts negligibly small current. This is true until a critical reverse bias is reached and junction breakdown occurs.
+>1. A reverse-biased PN junction conducts negligibly small current. This is true until a critical reverse bias is reached and junction breakdown occurs.
 >2. **击穿因为电场强度**
-   Junction breakdown occurs when the peak electric field in the PN junction reaches a critical value.
+   Junction breakdown occurs when the peak electric field in the PN junction reaches a critical value when the valence electrons are prone to `impact ionization` or can be `emitted by the field`.
 
 ### Peak electric field
 field and `potential barrier`
@@ -294,11 +292,14 @@ $$ V_{break}  = \frac{\epsilon \cdot\mathcal{E}_{crit}^2}{2qN} - V_{bi}$$
 
 ---
 
-# forward bias
+# forward bias 
 
->**minority carrier injection**
-`injection`的意思就是：多数载流子越过势垒，扩散到对方区域，成为对方区域的`excess minority carrier`的过程
-a forward bias of V reduces the barrier height, thus reduces $\mathcal{E}$ and upsets the balance between diffusion and drift that exists at zero bias. Electrons can now diffuse from the N side into the P side. Similarly, holes are injected from the P side into the N side. 
+**这节将推导 the concentration of `excess minority carriers` in `neutral region` under forward bias**. To conclude the concentration, we need `quasi-equilibrium boundary condition` and `Continuity equation`.
+
+>**carrier injection**
+就是一方的`majority carrier`越过势垒，扩散到对方区域，成为对方区域的`excess minority carrier`的过程
+
+>a forward bias of V reduces the barrier height, thus reduces $\mathcal{E}$ and upsets the balance between diffusion and drift that exists at zero bias. Electrons can now diffuse from the N side into the P side. Similarly, holes are injected from the P side into the N side.
 
 ## quasi-equilibrium boundary condition
 - 在depletion layer，我们有`肖克利假设`：由于depletion layer极窄且几乎没有载流子，所以载流子通过时间极短，远远小于 $\tau$ ，所以耗尽层内不考虑`recombination`
@@ -318,10 +319,10 @@ $$
 = n_{p0} e^{(E_{Fn} - E_{Fp})/kT} = n_{p0} e^{qV/kT} 
 $$
 
-\( n_{p0} \) is the **equilibrium** `denoted by subscript 0` electron concentration of the **P region** `denoted by the subscript P`, simply \( n_i^2/N_a \). The `minority carrier density` has been raised by \( e^{qV/kT} \).
+$ n_{p0} $ is the **equilibrium** `denoted by subscript 0` electron concentration of the **P region** `denoted by the subscript P`, simply $ n_i^2/N_a $. The `minority carrier density` has been raised by $ e^{qV/kT} $.
 ![alt text](image-1.png)
 
-A similar equation may be derived for \( p(x_N) \).Now we concluded **quasi-equilibrium boundary condition** or the **Shockley boundary condition**.
+A similar equation may be derived for $ p(x_N) $ .Now we concluded **quasi-equilibrium boundary condition** or the **Shockley boundary condition**.
 
 $$
 \boxed{
@@ -332,7 +333,7 @@ $$
 }
 $$
 
-### excess minority carrier
+- excess minority carrier on boundary
 $$
 \boxed{
 \begin{aligned}
@@ -342,12 +343,10 @@ $$
 }
 $$
 
-
-
 ---
 
 ## Continuity equation
-**neutral area** `excess carrier`是空穴流入，流出，复合动态平衡的结果
+
 >To determine the minority carrier densities in the interiors of the neutral N and P regions
 
 ### negligible drift component
@@ -356,9 +355,9 @@ In steady state, the number of holes flowing into the box per second = number of
 $$
 \frac{dJ_p}{dx} = q \frac{p'}{\tau} 
 $$
-$p'$ is excess hole concentration, τ is the recombination lifetime of the carriers.
+$p'$ is `excess hole concentration`, τ is the `recombination lifetime` of the carriers.
 This equation is valid for **both the majority and minority** carriers. 
->However, it is particularly easy to apply it to the minority carriers. The **minority carrier current** (but not the majority carrier current) is **dominated by diffusion** and the drift component can be ignored.
+>However, it is easy to apply it to the minority carriers. The **minority carrier current** (but not the majority carrier current) is **dominated by diffusion** and the drift component can be ignored.
 
 $$J_p = -qD_p\frac{dp}{dx} + q\mu_p p\mathcal{E}$$
 - *For* minority, $p$ is small, $\mathcal{E}$ is negligible in neutral area, $\nabla p$ is huge.
@@ -410,11 +409,7 @@ $$
 for the boundary conditions
 
 $$
-p'(\infty) = 0
-$$
-
-$$
-p'(x_N) = p_{N0}(e^{qV/kT} - 1)
+p'(\infty) = 0  \qquad p'(x_N) = p_{N0}(e^{qV/kT} - 1)
 $$
 
 The general solution
@@ -438,7 +433,9 @@ $$
 From the depletion-layer edges, the injected minority carriers move outward by diffusion. As they diffuse, their densities are reduced due to recombination, thus creating the exponentially decaying density profiles. Beyond a few diffusion lengths from the junction, p' have decayed to negligible values
 
 
-## ideal PN diode IV 特性
+## ideal PN diode IV characteristics
+**use the excess carrier conventration to find IV relationship under forward bias**
+
 N side minority:
 $$
 J_{pN} = -qD_p \frac{dp'(x)}{dx} = q \frac{D_p}{L_p} p_{N0}(e^{qV/kT} - 1)e^{-(x - x_N)/L_p}
@@ -451,6 +448,8 @@ $$
 $$
 J_{total} = J_{pN}(x_N) + J_{nP}(x_P) =    ( q \frac{D_p}{L_p} p_{N0} + q \frac{D_n}{L_n} n_{P0}    ) (e^{qV/kT} - 1)
 $$
+>1. in steady state, 空间处处电荷不积累，即 $J_{total}$ 与 $x$ 无关，找到一个合适的区域计算 $J_{total}$ 即可
+>2. **`肖克利假设`**, 由于depletion layer极窄且几乎没有载流子，载流子通过时间极短，远远小于 $\tau$ ，所以耗尽层内不考虑`recombination`。我们认为在`depletion layer`内，$J_{p} \quad J_{n}$ 与位置 $x$ 无关，将边界处电流密度相加，计算`depletion layer`的电流密度
 
 $$
 \boxed{
@@ -464,7 +463,7 @@ $V$ can be positive or negative
 ### limits of ideal model
 1. Avalanche Breakdown 
 反向电压加得足够大，电场变强，进入耗尽区的少子在两次碰撞之间获得的动能足以击出价带中的电子，产生新的电子-空穴对。这被称为碰撞电离（Impact Ionization），此时，耗尽区内的净产生率 $G_{impact} \gg 0$，原本的**肖克利假设（耗尽层内不考虑产生复合）宣告失效**
-2. Zener Breakdown 也是违反`肖克利假设`
+2. Zener Breakdown 也违反`肖克利假设`
 
 
 ## contributions of depletion region
