@@ -64,14 +64,20 @@ $$\frac{\hbar^2 k^2}{2m} = E$$
 
 ## 一维无限深方势阱
 
-$$V(x)=0，0<x<L\qquad V(x)=\infty，x\leq0 或 x\geq L$$
+$$
+V(x)=
+\begin{cases}
+0, & 0 < x < L \newline
+\infty,& x \leq 0 \text{ 或 } x \geq L
+\end{cases}
+$$
 **阱外** $\psi(x)=0$
 **阱内**定态薛定谔方程：
 $$-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2}=E\psi$$
 
 通解：$\psi(x)=A\sin(kx)+B\cos(kx)$
 
-边界条件 $\psi(0)=0 \qquad \psi(L)=0$ 和归一化条件得
+边界条件 $\psi(0)= \psi(L)=0$ 和归一化条件得
 
 $$kL=n\pi，n=1,2,3,\cdots$$
 
@@ -103,13 +109,14 @@ T e^{ik_2x}, & x>0
 \end{cases}$$
 $$R=(k_1-k_2)/(k_1+k_2)，T=2k_1/(k_1+k_2)$$
 
-- $0<E<V_0$
+- $ 0 < E < V_0 $
 $$k=\sqrt{2mE}/\hbar，\kappa=\sqrt{2m(V_0-E)}/\hbar$$
 $$\psi(x)=
 \begin{cases}
 e^{ikx}+R e^{-ikx}, & x<0 \newline
 T e^{-\kappa x}, & x>0
-\end{cases}$$
+\end{cases}
+$$
 $$R=(k-i\kappa)/(k+i\kappa)，T=2k/(k+i\kappa)$$
 
 ## 有限宽tunneling
@@ -119,7 +126,7 @@ $$R=(k-i\kappa)/(k+i\kappa)，T=2k/(k+i\kappa)$$
 *   **区域 III ($x > L$):** $V=0$
 
 ### The Setup
-Schrödinger equation: $-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi = E\psi$.
+Schrödinger equation: $$-\frac{\hbar^2}{2m}\frac{d^2\psi}{dx^2} + V(x)\psi = E\psi$$
 Define wave numbers:
 *   $k = \frac{\sqrt{2mE}}{\hbar}$ (outside, $E > 0$)
 *   $\kappa = \frac{\sqrt{2m(V_0-E)}}{\hbar}$ (inside, $V_0 > E$)

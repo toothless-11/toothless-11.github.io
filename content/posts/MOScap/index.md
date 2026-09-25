@@ -12,22 +12,10 @@ title: MOS capacitor
 | --- | --- |
 |![alt text](image.png)|![alt text](image-1.png)|
 
-## why depletion?
-其本质原因在于**金属和半导体电子逸出功不同**，导致接触后为了达到热平衡，电荷发生了转移和重新分布
-
-以 **n型半导体** 与高功函数金属接触为例：
-1. **费米能级不相等**：在接触前，n型半导体的费米能级 $E_{Fs}$ 通常高于金属的费米能级 $E_{Fm}$（即半导体的功函数 $\Phi_s$ 小于金属的功函数 $\Phi_m$）。费米能级代表电子的平均化学势，意味着半导体中的电子能量比金属中的电子高
-2. **电荷转移**：当两者接触时，为了达到热平衡，两边的费米能级必须对齐（即 $E_{Fs} = E_{Fm}$）。于是，半导体中高能量的电子会自发地向金属扩散
-3. **留下空间电荷区（耗尽区）**：
-    - 电子从半导体流向金属，并在金属表面聚集，使金属表面带负电
-    - 在半导体一侧，原本提供自由电子的施主杂质（如磷、砷原子）失去了电子，变成了带正电的正离子（$N_D^+$）
-    - 由于这些正离子被固定在晶格中无法移动，且该区域内的自由电子（多子）大部分已流失，因此在半导体靠近界面的一侧形成了一个缺少自由载流子的**空间电荷区**，即**耗尽区**
-    - 同理，对于 **p型半导体** 与低功函数金属（$\Phi_m < \Phi_s$）接触，空穴会向金属流动（或者电子从金属流向半导体与空穴复合），在半导体一侧留下带负电的受主离子（$N_A^-$），同样形成多子（空穴）枯竭的耗尽区。
-
+接下来全部以**n-type semiconductor and high-work-function metal contact**为例子。
 ## 能量概念定义
 ### vaccum level
-对应的是电子完全脱离固体束缚，在vaccum中的状态
-When applied voltage, the vaccum level bends, bcs electron's energy varies in different points of vaccum space.
+The energy level where electrons break free from solid lattice, into vaccum space. When applied voltage, the vaccum level bends, bcs electron's energy varies in different points of vaccum space.
 
 ### metal work function
 $$\Phi_m = E_{vac} - E_{fm}$$
@@ -39,110 +27,71 @@ $$\chi_s = E_{vac} - E_c$$
 $$\Phi_s = E_{vac} - E_{fs} = \chi_s + E_c - E_{fs}$$
 
 ### Schottky barrier
->For metal n type interface
-$$\Phi_{Bn} = E_c(interface) - E_{fm}$$
-
-## 能带变化
-1. **费米能级对齐**：semi的 $E_{Fs}$ 和metal的 $E_{Fm}$ 对齐，成为一条水平线 $E_F$. Metal is the ocean of electrons, the carriers injected into metal is **a drop in the ocean**.
-2. **真空能级的连续性**：在接触面（忽略界面dipolar），真空能级 $E_{vac}$ 必须是连续的
-3. **计算能级差**：
-   在紧邻界面的交界处，我们同时观察两边的能级：
-   * 从金属侧看，真空能级比费米能级高出 $\Phi_m$
-   * 从半导体侧看，真空能级比导带底 $E_c$ 高出 $\chi_s$
-
-由于界面处的真空能级是同一个参考点，我们可以列出能量关系：
-$$\Phi_{Bn} = E_c(界面) - E_F = (E_{vac} - E_F) - (E_{vac} - E_c(interface))$$
-
-将定义代入上式，即可得到：
-$$\Phi_{Bn} = \Phi_m - \chi_s$$
-
-对于 **p型半导体** $\Phi_{Bp}$ 则是界面处费米能级与价带顶 $E_v$ 的差值
-$$\Phi_{Bp} = E_g - (\Phi_m - \chi_s)$$
+- 在界面处，因为`silicon electron affinity`等保持固定，且`vaccum level`连续，（空间中同一点`vaccum level`左右极限相同）可以推断界面处的 $E_c$ 高于 $E_f$ 。The gap btw $E_c$ and $E_f$ is **defined** `Schottky barrier`.
+$$\phi_{Bn} = E_c(界面) - E_{fm}$$
+- `Schottky barrier` $\Phi_B$ is **determined** by `metal work function` and `silicon electron affinity`.
+$$\phi_{Bn} = \Phi_m - \chi_s$$
 
 
-## why band bending
->能带弯曲是 **built-in field** 在能量空间上的直观反映。
 
-$$E = -qV$$
 
-- n型半导体向上弯曲
->前提：$\Phi_m > \Phi_s$
-1. **电场方向**：由于半导体一侧带正电，金属一侧带负电，**从半导体指向金属**的内建电场。
-2. **电势变化**：沿着电场的方向s -> m，静电势 $V$ 是逐渐**降低**的
-3. **能带弯曲**：根据 $E = -qV$，由于界面处的静电势 $V$ 最低，电子在该处的能量 $E$ 就最高。因此，导带底 $E_c$ 和价带顶 $E_v$ 在靠近金属界面时都会**向上弯曲**
+## why depletion?
+the **work function difference** between metals and semiconductors drives charge transfer and redistribution upon contact to reach thermal equilibrium.
 
-- p型半导体向下弯曲
->前提：$\Phi_m < \Phi_s$
-1. **电场方向**：内建电场**从金属指向半导体**
-2. **电势变化**：沿着电场方向m -> s，静电势 $V$ 逐渐降低；反过来，从半导体内部靠近金属界面时，静电势 $V$ 是逐渐**升高**的
-3. **能带弯曲**：根据 $E = -qV$，界面处的静电势 $V$ 最高，电子在该处的能量 $E$ 就最低。因此，靠近金属界面时，能带（导带和价带）会**向下弯曲**
+1. **Fermi levels differ**: **Before contact**, $E_{Fs} > E_{Fm}$ (i.e., $\Phi_s < \Phi_m$), so semiconductor electrons have higher energy.
 
-## thermionic emission theory
+2. **Charge transfer**: **On contact**, Fermi levels align ($E_{Fs} = E_{Fm}$), so electrons diffuse from semiconductor to metal. Metal is an ocean of electrons, so the diffusing electrons are like a drop in the ocean.
+
+3. **Depletion region forms**:
+   - Electrons accumulate on the metal surface.
+   - Donor impurities left behind become fixed positive ions ($N_D^+$).
+   - With free electrons depleted, a **space charge/depletion region** forms near the interface.
+   - For **p-type** with a low-work-function metal ($\Phi_m < \Phi_s$), holes flow to the metal, leaving negative acceptor ions ($N_A^-$) and a depletion region.
+
+
+
+# thermionic emission theory
 ![alt text](image-2.png)
 推导肖特基二极管在正向偏压 $V$ 下，流过界面的净电流密度 $J$
 
-设 $x$ 方向为垂直于金属-半导体界面的方向。
+$x$ 方向为垂直于金属-半导体界面的方向。
 * 电子只有在 $x$ 方向的动能大于势垒高度时，才能越过势垒。
-* 势垒高度对于半导体一侧的电子来说，在偏压 $V$ 下为：
-  $$E_b = q(V_{bi} - V)$$
-  其中 $V_{bi}$ 是`built-in potential`，$V$ 是正向偏压。
-* 电子越过势垒所需的最小 $x$ 方向速度 $v_{min}$ 满足：
-  $$\frac{1}{2} m v_{min}^2 = q(V_{bi} - V)$$
-  其中 $m$ 是半导体中电子的有效质量。
+* Barrier height 对于半导体一侧的电子来说，在偏压 $V$ 下为：
+  $$E_b = q(\phi_{Bn} - V)$$
+  其中 $V$ 是正向偏压
 
+## 热发射电流密度
 
-### $J_{s \to m}$
+单位体积内、速度在 $v , v+dv$ 之间的电子数 $dn$ satisfies **Maxwell distribution**. 
+- 由于势垒较高（$\Phi_{Bn} \gg kT$），可以用玻尔兹曼分布计算interface处的 electron density.
+$$n = N_c e^{-q(\Phi_{Bn} - V)/kT} = 2[\frac{2\pi m_n kT}{h^2}]^{3/2} e^{-q(\Phi_{Bn} - V)/kT}$$
+$$v_{thx} = -\sqrt{2kT/\pi m_n}$$
+$$J_{S \to M} = -\frac{1}{2}qn v_{thx} = \frac{4\pi q m_n k^2}{h^3} T^2 e^{-q\phi_B/kT} e^{qV/kT}$$
+$$J_{S \to M} \equiv J_0 e^{qV/kT}$$
 
-根据统计物理学，单位体积内、速度在 $v$ 到 $v+dv$ 之间的电子数 $dn$ 服从费米-狄拉克分布。由于势垒较高（$\Phi_{Bn} \gg kT$），可以用**麦克斯韦-玻尔兹曼分布**来近似：
+### derivation of $v_{thx}$
 
-$$dn = 2    ( \frac{m}{h}    )^3 \exp   ( -\frac{E - E_F}{kT}    ) dv_x dv_y dv_z$$
+1. 速率分布函数
+$$f(v_x) = \sqrt{\frac{m_n}{2\pi k T}} \exp\left( -\frac{m_n v_x^2}{2 k T} \right)$$
 
-* $E$ 是电子的总能量，可写为导带底能量 $E_c$ 与动能之和：
-  $$E = E_c + \frac{1}{2}m(v_x^2 + v_y^2 + v_z^2)$$
+2. 平均值
+$v_x < 0$
+先算速度大小的平均值 $\langle |v_x| \rangle_{v_x < 0}$
 
-将 $E$ 代入 $dn$ 表达式中：
+平均速度定义为：
+$$\langle |v_x| \rangle = \frac{\int_{-\infty}^{0} |v_x| f(v_x) dv_x}{\int_{-\infty}^{0} f(v_x) dv_x}$$
 
-$$dn = 2 ( \frac{m}{h} )^3 \exp ( -\frac{E_c - E_F}{kT}) \exp( -\frac{m(v_x^2 + v_y^2 + v_z^2)}{2kT})  dv_x dv_y dv_z$$
+3. normalisation & weight
+$$\int_{-\infty}^{0} f(v_x) dv_x = \frac{1}{2}$$
 
-电流密度是电荷量、速度和电子浓度的乘积。只有 $v_x > v_{min}$ 的电子才能贡献 $s \to m$ 的电流：
+$$\int_{-\infty}^{0} |v_x| f(v_x) dv_x = \int_{-\infty}^{0} (-v_x) \sqrt{\frac{m_n}{2\pi k T}} \exp\left( -\frac{m_n v_x^2}{2 k T} \right) dv_x$$
+令 $u = \frac{m_n v_x^2}{2 k T}$，则 $v_x dv_x = \frac{k T}{m_n} du$。
 
-$$J_{s \to m} = q \int v_x    dn$$
+$$  = \sqrt{\frac{m_n}{2\pi k T}} \cdot \frac{k T}{m_n} \cdot \int_{0}^{\infty} e^{-u} du = \sqrt{\frac{k T}{2\pi m_n}}$$
 
-将 $dn$ 代入并展开为三重积分：
-
-
-$$= 2q ( \frac{m}{h} )^3 \exp   ( -\frac{E_c - E_F}{kT}    ) \int_{v_\text{min}}^{\infty} v_x \exp   ( -\frac{m v_x^2}{2kT}    ) dv_x \int_{-\infty}^{\infty} \exp   ( -\frac{m v_y^2}{2kT}    ) dv_y \int_{-\infty}^{\infty} \exp   ( -\frac{m v_z^2}{2kT}    ) dv_z$$
-
-
-
-1. **$y$ 和 $z$ 方向的积分**（高斯积分形式 $\int_{-\infty}^{\infty} e^{-ax^2} dx = \sqrt{\frac{\pi}{a}}$）：
-   $$\int_{-\infty}^{\infty} \exp   ( -\frac{m v_y^2}{2kT}    ) dv_y = \sqrt{\frac{2\pi kT}{m}}$$
-   同理，$z$ 方向积分也等于 $\sqrt{\frac{2\pi kT}{m}}$
-   
-   $$   (\sqrt{\frac{2\pi kT}{m}}   )^2 = \frac{2\pi kT}{m}$$
-
-2. **$x$ 方向的积分**：
-   令 $u = \frac{m v_x^2}{2kT}$，则 $du = \frac{m v_x}{kT} dv_x$，即 $v_x dv_x = \frac{kT}{m} du$。
-   当 $v_x = v_{min}$ 时，$u_{min} = \frac{m v_{min}^2}{2kT} = \frac{q(V_{bi} - V)}{kT}$。
-   
-   $$\int_{v_{min}}^{\infty} v_x \exp   ( -\frac{m v_x^2}{2kT}    ) dv_x = \frac{kT}{m} \int_{u_{min}}^{\infty} e^{-u} du = \frac{kT}{m} \exp   ( -\frac{q(V_{bi} - V)}{kT}    )$$
-
-
-
-将两部分积分结果代回 $J_{s \to m}$ 表达式：
-
-$$J_{s \to m} = 2q    ( \frac{m}{h}    )^3 \exp   ( -\frac{E_c - E_F}{kT}    ) \cdot    [ \frac{kT}{m} \exp   ( -\frac{q(V_{bi} - V)}{kT}    )    ] \cdot    [ \frac{2\pi kT}{m*}    ]$$
-
-
-$$J_{s \to m} =    ( \frac{4\pi q m k^2}{h^3}    ) T^2 \exp   ( -\frac{(E_c - E_F) + qV_{bi} - qV}{kT}    )$$
-
-屏障高度 $\Phi_{Bn}$ 满足：
-$$q\Phi_{Bn} = (E_c - E_F) + qV_{bi}$$
-
-代入上式，并定义**Effective Richardson Constant**
-$$A^* = \frac{4\pi q m k^2}{h^3}$$
-
-$$J_{s \to m} = A^* T^2 \exp   ( -\frac{q\Phi_{Bn}}{kT}    ) \exp   ( \frac{qV}{kT}    )$$
+4. average
+$$\langle |v_x| \rangle = \frac{\sqrt{\frac{k T}{2\pi m_n}}}{1/2} = \sqrt{\frac{2 k T}{\pi m_n}}$$
+证毕
 
 ---
 
@@ -172,22 +121,23 @@ $$J = J_s    [ \exp   ( \frac{qV}{kT}    ) - 1    ]$$
 |![alt text](image-3.png)|![alt text](image-4.png)|
 
 1. $V_{gap}$ refers to the fermi level gap btw metal and semiconductor
-2. $\phi_s$ refers to the band bending of substrate, negative if $E_c$ bends up toward surface
+2. $\phi_s$ refers to the band bending of substrate, negative if $E_c$ bends up toward gate
 3. $V_{ox}$ is the voltage across oxide, negative if band tilts up toward the gate
+**Simply, gate has a positive reference voltage.**
 $$\boxed{V_{gap} = V_{fb} + \phi_s + V_{ox}}$$
 
 
 ## zero bias
 1. zero bias 下，为何能带如此弯曲？
 
-> $\Phi_m \neq \Phi_s$，金属侧的 $E_F$ 和半导体侧的 $E_F$ 在接触前处于不同的高度。为了强行把它们“拉平”，电荷会在接触面附近重新分布：金属侧和半导体侧会通过外部电路进行电子交换, 交换在界面处产生一个`Built-in Field`。内建电场产生的电势变化，必然会导致能带随着电势的变化而弯曲。
+> $\Phi_m \neq \Phi_s$, $E_fm$ and $E_F$ differ before contact. On contact, carriers redistribute through the  external circuit connected to substrate and metal. This generates a `Built-in Field` on the surface of contact.
 
 2. zero bias 下，为何metal不倾斜，oxide直线倾斜，semi曲线倾斜？
 >因为金属内的电子近似为“自由电子气模型”，像海平面一样 flat. Oxide内部没有carrier，由泊松方程可知 $\mathcal{E} = Const$ . Semi内部的carrier分布不均，电场会变化
 
 3. 为什么MOScap施加电压后，不需要像PN结一样考虑准费米能级，只需要费米能级？
 
->PN结在正向或反向偏置下都有电流，系统与外界存在能量交换。而MOScap中只有静电感应，没有持续电流，费米能级统一。
+>PN结在正向或反向偏置下都有电流，系统与外界存在能量交换。而MOScap中只有静电感应，费米能级统一？
 
 4. 有电压约束，必然有电气连接
 5. when applied voltage，metal 和 semi 的 fermi level错开
@@ -196,10 +146,10 @@ $$\boxed{V_{gap} = V_{fb} + \phi_s + V_{ox}}$$
 `flat band` means the band in the oxide layer is flat.
 
 `flat band voltage` eqs the difference btw `gate work function` and `semicoductor work function` ,negative more often.
-$$V_{fb} = \psi_g - \psi_s$$
+$$V_{fb} = \Phi_g - \Phi_s$$
 
 ## surface accumulation
->more negative $V_{gap}$ than $V_{fb}$， causing charge accumulates on the oxide-semi surface.
+>more negative $V_{gap}$ than $V_{fb}$，causing charge accumulates on the oxide-semi surface.
 
 ![alt text](image-5.png)
 $\phi_s$ is also the **surface voltage**.
@@ -209,8 +159,7 @@ $$p_s = N_a e^{{-q\phi_s}/{kT}}$$
 $$V_{gap} = V_{fb} + \phi_s + V_{ox}$$
 
 
-### $V_{ox}$
->此处的分压按照绝缘体电容器计算
+### $V_{ox}$ across "insulator cap"
 
 $$V_{ox} = V_{gap} - V_{fb}\qquad V_{ox} = -Q_{acc} / C_{ox}$$
 $$V_{ox} = -Q_{sub} / C_{ox}$$
@@ -224,17 +173,15 @@ $C_{ox}$ is the oxide capacitance per unit area (F/cm2) and $Q_{sub}$ is the sub
 ---
 ## surface depletion
 ![alt text](image-6.png)
->a more positive $V_{gap}$ than $V_{fb}$ is applied.
-there is now a depletion region at the surface because $E_F$ is far from both Ec and Ev
+> When $V_{gap} < V_{fb}$, there is now a depletion region on surface because $E_F$ is far from both Ec and Ev, 该区域只剩下不能移动的**donor/accepter ions**. 离子形成了空间电荷区,电荷密度记为 $Q_{dep}$
 
-用上`泊松方程`和`边界条件` $ \mathcal{E}_{(x = W_{dep})} = 0 $
-$$V_{ox} = -\frac{Q_{sub}}{C_{ox}} = -\frac{Q_{dep}}{C_{ox}} = \frac{qN_aW_{dep}}{C_{ox}} = \frac{\sqrt{qN_a^2\epsilon_s}\phi_s}{C_{ox}}$$
-
+从`泊松方程`和 $ \mathcal{E}_{(x = W_{dep})} = 0 (边界条件)$ 得到电势分布
 $$\phi_s = \frac{qN_aW_{dep}^2}{2\epsilon_s}$$
+于是
+$$V_{ox} = -\frac{Q_{sub}}{C_{ox}} = -\frac{Q_{dep}}{C_{ox}} = \frac{qN_aW_{dep}}{C_{ox}} = \frac{\sqrt{qN_a 2\epsilon_s}\phi_s}{C_{ox}}$$
 
 $$V_{gap} = V_{fb} + \phi_s + V_{ox} = V_{fb} + \frac{qN_aW_{dep}^2}{2\epsilon_s} + \frac{qN_aW_{dep}}{C_{ox}}$$
 
->**Depletion Layer**, 指半导体表面附近的区域，其中`majority carriers`被排斥，导致该区域只剩下不能移动的**donor/accepter ions** , 这些电离杂质形成了空间电荷区,电荷密度记为 $Q_{dep}$
 
 
 
@@ -244,10 +191,12 @@ $$V_{gap} = V_{fb} + \phi_s + V_{ox} = V_{fb} + \frac{qN_aW_{dep}^2}{2\epsilon_s
 ![alt text](image-7.png)
 >$V_{gap}$ increasingly more positive. **Threshold** is state when there is only depletion but approaching inversion.
 
-The term inversion means that the surface is inverted from P type to N type, or electron rich. Threshold is often defined as the condition when the surface electron concentration, $n_s$, is equal to the `bulk doping concentration`, $N_a$. That means
+The term inversion means that the surface is inverted from P type to electron rich. Threshold is **often defined** as the condition when the `surface electron concentration`, is equal to the `bulk doping concentration`, $n_s = N_a$. That means
 
 $$ (E_c–E_F)_{surface} = (E_F – E_v)_{bulk}$$
-$\phi_{\text{B}}$ 描述了半导体**bulk**的 $E_{\text{F}}$ 与 $E_{\text{i}}$ 的差。它反映了半导体的掺杂类型和掺杂浓度。
+When $q\phi_s$ ，the band bending，reaches **bulk**'s $E_{\text{F}} - E_{\text{i}}$ , MOScap is at threshold.
+
+For simpilicity, **bulk**'s $E_{\text{F}} - E_{\text{i}}$ is defined $q\phi_{\text{B}}$ . $\phi_{\text{B}}$ reflects the type and density of doping.
 $$q \phi_B = \frac{E_g}{2} - (E_F - E_v)_{\text{bulk}}$$
 
 $$= k T \ln \frac{N_v}{n_i} - k T \ln \frac{N_v}{N_a} = k T \ln \frac{N_a}{n_i}$$
@@ -269,14 +218,14 @@ $$\phi_{st} = -2 \phi_B = - 2 \frac{k T}{q} \ln \frac{N_d}{n_i}$$
 >$V_t$ packages multiple variables into one. And *Inversion* uses the package established by *threshold*.
 
 # INVERSION
-> $V_{gap} > V_t$ , there is now a inversion layer, filled with inversion electron. Assume that **whatever**, inversion layer can get **suffient electrons**
+> $V_{gap} > V_t$ , there is now a inversion layer, filled with inversion electrons. Assume that **whatever**, inversion layer can get **suffient electrons**. The `inversion charge` is mobile, which is totally different from `dep charge`, and its density can be represented with $Q_{inv}$ (C/cm2)
 
 ![alt text](image-8.png)
 
-The `inversion charge density` is represented with $Q_{inv}$ (C/cm2)
+
 ## $\phi_s$ pinning
 ### Before Inversion $\phi_s < 2\phi_B$
-The only charge in the semiconductor is the depletion charge $Q_{\text{dep}}$ , which only grows slowly (proportionally to $\sqrt{\phi_s}$). Because $Q_{\text{dep}}$ is relatively small, $V_{\text{ox}}$ increases slowly. Therefore, most of the increase in gate voltage ($V_{gap}$) goes directly into bending the bands further, i.e., increasing $\phi_s$.
+The only charge in the semiconductor is the depletion charge $Q_{\text{dep}}$ , which only grows slowly (proportionally to $\sqrt{\phi_s}$). Because $Q_{\text{dep}}$ is relatively small, $V_{\text{ox}}$ increases slowly. Therefore, most of the increase in $V_{gap}$ goes directly into bending the bands further, i.e., increasing $\phi_s$.
 
 ### After Inversion $\phi_s \ge 2\phi_B$
 Once $\phi_s$ reaches $2\phi_B$, the `inversion layer` forms. Now, if $V_{gap}$ increase  further
@@ -291,8 +240,8 @@ $$V_{gap} = V_{fb} -\frac{\frac{n_i^2}{N_a} e^{\phi_s / {kT}} W_{inv} + \sqrt{2q
 
 1. If $\phi_s$ were to increase even slightly (e.g., by $0.1\text{ V}$), the exponential rule dictates that $Q_{\text{inv}}$ would increase massively.
 2. This massive surge in $Q_{\text{inv}}$ requires a correspondingly massive increase in the oxide voltage drop ($V_{\text{ox}} = Q_{\text{inv}}/C_{\text{ox}}$).
-3. Since $V_{gap} = V_{\text{fb}} + V_{\text{ox}} + \phi_s$, **almost all of the newly applied gate voltage is "soaked up" by the oxide ($V_{\text{ox}}$)** to support this massive sheet of inversion charge.
-4. As a result, there is virtually no leftover voltage from the gate to further increase the surface potential $\phi_s$. And depletion layer width reached its maximum value
+3. Since $V_{gap} = V_{\text{fb}} + V_{\text{ox}} + \phi_s$, **almost all of the newly applied gate voltage is "soaked up" by the oxide ($V_{\text{ox}}$)**.
+4. As a result, there is virtually no leftover voltage from the gate to further increase the `surface potential` $\phi_s$. And depletion layer width reached its maximum value
 $$W_{dmax} = \sqrt{\frac{2\epsilon_s 2\phi_B}{qN_a}}$$
 ---
 $$V_{\text{gap}} = V_{\text{fb}} + 2\phi_{\text{B}} - \frac{Q_{\text{dep}}}{C_{\text{ox}}} - \frac{Q_{\text{inv}}}{C_{\text{ox}}} = V_{\text{fb}} + 2\phi_{\text{B}} + \frac{\sqrt{q N_{\text{a}} 2\varepsilon_{\text{s}} 2\phi_{\text{B}}}}{C_{\text{ox}}} - \frac{Q_{\text{inv}}}{C_{\text{ox}}}$$
@@ -310,11 +259,6 @@ $$\therefore \quad \boxed{Q_{\text{inv}} = -C_{\text{ox}}(V_{\text{gap}} - V_{\t
 
 ---
 
-### layers
-1. **Oxide**：作为电介质，通过电压降分配传递栅极电场。
-2. **inversion layer（电子层）**：紧贴氧化层，其电荷密度随`surface potential`指数级增长, very thin. 当$V_{gap} > V_t$，$V_{gap}$ 持续增加，引起gate charge 增加. Gate增加的每一份电荷增量（$\Delta Q_g$），都会立即被进入`inversion layer`的负电荷（$\Delta Q_{inv} = -\Delta Q_g$）完全抵消。根据**高斯定理**，取一个围住栅极、inversion layer的高斯面，$V_{gap}$增加对`depletion layer`电场的影响可以忽略
-3. **depletion layer（离子层）**：由于`inversion layer`截获了所有栅极电荷增量，穿透进入该区域的净电荷量保持不变，导致耗尽层电场分布不再改变。
-
 ## MOS C–V CHARACTERISTICS
 
 The capacitance in the MOS theory is always the `small-signal capacitance`
@@ -328,7 +272,7 @@ $$C_{\text{dep}} = \frac{\varepsilon_s}{W_{\text{dep}}}$$
 $$\frac{1}{C} = \frac{1}{C_{\text{ox}}} + \frac{1}{C_{\text{dep}}}$$
 $$\frac{1}{C} = \sqrt{\frac{1}{C_{\text{ox}}^2} + \frac{2(V_{gap} - V_{\text{fb}})}{qN_a\varepsilon_s}}$$
 3. in `inv region`, 
-- **if the device is MOS transistor** `inversion layer` can get suffient **electron supply** becomes the bottom electrode,  $C = C_{ox}$
+- **if the device is MOS transistor** `inversion layer` can get suffient **electron supply** to become the bottom electrode,  $C = C_{ox}$, just like we concluded before.
 - if **insuffient electron supply** , things becomes similar to `dep region`. However, due to $W_{dep}$ has a maximum $W_{dmax}$, the capcitance saturates when $V_{gap}$ reaches $V_t$.
 
 **MOS transistor/cap C–V**
