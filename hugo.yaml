@@ -16,9 +16,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: toothless
-  description: "toothless description"
-  keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  author: toothless
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -38,8 +36,8 @@ params:
   comments: false
   hidemeta: false
   hideSummary: false
-  showtoc: true
-  tocopen: false
+  ShowToc: true
+  TocOpen: true
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -51,23 +49,20 @@ params:
     safari_pinned_tab: "<link / abs url>"
 
   label:
-    text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
+    text: "toothless"
 
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
     title: toothless
-    subtitle: "My notes"
     imageUrl: ""
     imageWidth: 120
     imageHeight: 120
     imageTitle: my image
     buttons:
-      - name: Posts
+      - name: blogs
         url: posts
-      - name: Tags
+      - name: tags
         url: tags
 
   # home-info mode
@@ -113,11 +108,11 @@ params:
 menu:
   main:
     - identifier: posts
-      name: posts
+      name: 文章
       url: /posts/
       weight: 10
     - identifier: tags
-      name: tags
+      name: 标签
       url: /tags/
       weight: 20
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma

@@ -1,0 +1,5 @@
+{{- if .IsHome -}}
+<canvas id="cosmic-background" aria-hidden="true"></canvas>
+{{- $script := resources.Get "js/cosmic-background.js" | minify | fingerprint -}}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}" crossorigin="anonymous"></script>
+{{- end -}}

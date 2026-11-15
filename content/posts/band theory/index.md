@@ -299,7 +299,7 @@ $$ \vec{v}_{dp} = \frac{e\tau}{m_p}\vec{\mathcal{E}} \qquad \text{(for holes)}$$
 
 定义迁移率 (mobility) $$ \mu = \frac{e\tau}{m^*} $$
 
-> 迁移率反映载流子对电场的响应快慢，Si中室温下电子 $\mu_n \approx 1350  \text{cm}^2/(\text{V·s})$，空穴 $\mu_p \approx 480  \text{cm}^2/(\text{V·s})$。
+> 迁移率反映载流子对电场的响应快慢，Si中室温下电子 $\mu_n \approx 1350  \text{cm}^2/(\text{V·s})$，空穴 $\mu_p \approx 480  \text{cm}^2/(\text{V·s})$
 
 总漂移电流密度
 $$ \vec{J}_{drift} = q n \vec{v}_d + q p \vec{v}_d  = q(n\mu_n + p\mu_p)\vec{\mathcal{E}} $$

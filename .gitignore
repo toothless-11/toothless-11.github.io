@@ -10,3 +10,6 @@
 # 其他 Hugo 可能生成的辅助文件
 /assets/jsconfig.json
 /hugo_stats.json
+
+# for ai
+/packed.txt
